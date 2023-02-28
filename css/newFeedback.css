@@ -1,0 +1,78 @@
+.form{
+    background-color: white;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37.5%;
+    padding: 0.1px;
+}
+.plus-svg{
+    width: 56px;
+    height:56px;
+    position: absolute;
+    left: 440px;
+    top: -1px;   
+}
+#back-img{
+    background-image: url("../assets/suggestions/desktop/background-header.png");
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 440px;
+    top: -1px; 
+}
+body{
+    margin: auto;
+}
+.form-div{
+    margin: auto;
+    width: 84.44%;
+}
+.form-title{
+    margin: 52px 0 40px 7.77%;
+}
+.input-box{
+    background-color: #F7F8FD;
+    border-style: none;
+    border-radius: 5px;
+    height: 48px;
+    width: 100% !important;
+}
+.input-box-big{
+    background-color: #F7F8FD;
+    border-style: none;
+    border-radius: 5px;
+    height: 96px;
+    width: 100%;
+}
+select{
+    width: 200px;
+    height: 25px;
+    margin: 2px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 15px;
+}
+
+p{
+    margin: 0;
+}
+.cancel-btn{
+    background-color: #3A4374;
+    border-radius: 5px;
+    color: white;
+    margin: auto;
+    padding: 10px;
+    border-style: none;
+    height: 44px;
+    width: 93px;
+}
+.last-form-div{
+    margin-bottom: 32px;
+}
+.btn-div{
+    margin-left: 45.37%;
+    margin-bottom: 40px;
+    /* margin-right: 40px */
+}

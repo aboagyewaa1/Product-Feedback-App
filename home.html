@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <div class="main-page">
+        <div class="nav">
+            <div class="nav-size" id="top-nav">
+                <p class="h2" id="top-nav-text">Frontend Mentor</p>
+                <p  class="body-2"id="nav-text-small">Feedback Board</p>
+            </div>
+            <div class="nav-size nav-2" id="size-1">
+                <div class="nav-2-inner">
+                <button class="nav-btn body-3" id="all-btn">All</button>
+                <button class="nav-btn body-3">UI</button>
+                <button class="nav-btn body-3">UX</button>
+                <button class="nav-btn body-3">Enhancement</button>
+                <button class="nav-btn body-3">Bug</button>
+                <button class="nav-btn body-3">Feature</button>
+               </div>
+            </div>
+            <div class="nav-2 nav-size" id="size-2">
+                <div class="nav-btm-inner marg marg-1">
+                    <p class="h3 dark-text"id="road-text">Roadmap</p>
+                    <a href="roadmap.html" class="body-3" id="view-text">View</a>
+                </div>
+                <div>
+                  <div class="nav-btm-inner list marg"><p class="round" id="plan"></p><p id="spc">Planned</p><p class="flex-end blk-start">2</p></div>
+                  <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start">3</p></div>
+                  <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start">1</p></div>
+               </div>
+            </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <img class="sugg-img head-marg" src="assets/suggestions/icon-suggestions.svg">
+            <p class="sugg head-marg" id="sugg-no"></p>
+            <p class="sort head-marg">Sort by: Most Upvotes <img class="arrow-down" src="assets/shared/icon-arrow-down.svg"></p>
+            <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end">Add Feedback</button>
+
+        </div>
+        <div class="content" id="content1">  
+
+        </div>
+
+    </div>
+</div>
+<script src="index.js"></script>
+    
+</body>
+</html>

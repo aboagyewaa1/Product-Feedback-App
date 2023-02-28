@@ -1,0 +1,37 @@
+.svg-arrow { 
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 10px;
+    background-image: url('../assets/shared/icon-arrow-down.svg');
+    padding: 0.1em 2em 0.1em 0.4em;
+  }
+
+  option{
+   padding: 50px;
+   min-height: 200px;
+  }
+
+  .del-btn{
+    background-color: #D73737;
+    color: white;
+    border-style: none;
+    width: 17.22%;
+    height: 44px;
+    border-radius: 5px;
+    margin-right: 20.37%;
+    margin-left: 7.78%;
+  }
+
+  .save-changes-btn{
+    background-color: #AD1FEA;
+    color: white;
+    border-style: none;
+    width: 17.22%;
+    height: 44px;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 15px;
+
+  }
+

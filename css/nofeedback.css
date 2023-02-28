@@ -1,0 +1,11 @@
+.no-content{
+    margin: 111px 24.97% 110px 25.33%;
+}
+.no-yet{
+    margin-top: 53px;
+    margin-bottom: 16px;
+}
+p{
+    margin: 0;
+    /* margin-block-start: 0; */
+}
