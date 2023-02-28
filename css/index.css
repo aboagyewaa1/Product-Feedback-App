@@ -68,6 +68,10 @@ body{
     font-size: 13px;
     margin-bottom: 14px;
     margin-right: 8px;
+    padding: 5px;
+}
+.svg{
+  margin-top: 5px;
 }
 
 .nav-btn:active{
@@ -289,13 +293,15 @@ body{
 .comments{
     display: flex;
     flex-direction: row;
-    justify-self: flex-end;
     height: fit-content;
     width: max-content;
+   
 }
 .comments-svg{
     width: 18px;
     height: 16px;
+    margin-top: 18px;
+    margin-right: 8px;
 }
 
 .arrow-left{
