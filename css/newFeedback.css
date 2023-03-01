@@ -14,12 +14,9 @@
     top: -1px;   
 }
 #back-img{
-    background-image: url("../assets/suggestions/desktop/background-header.png");
-    width: 26px;
-    height: 26px;
     position: absolute;
     left: 440px;
-    top: -1px; 
+    top: -10px; 
 }
 body{
     margin: auto;
