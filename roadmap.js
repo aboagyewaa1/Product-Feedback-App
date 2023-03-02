@@ -25,6 +25,14 @@ console.log(live)
 const plannedList = document.getElementById('planned')
 const progressList = document.getElementById('in-progress')
 const liveList = document.getElementById('live-1')
+const planL = document.getElementById('plan-title-len')
+const progL = document.getElementById('prog-title-len')
+const liveL = document.getElementById('live-title-len')
+
+planL.innerHTML=`Planned (${planned.length})`
+progL.innerHTML=`In-Progress (${progress.length})`
+liveL.innerHTML=`Live (${live.length})`
+console.log(planned.length)
 
 
 for(let i=0;i<planned.length;i++){

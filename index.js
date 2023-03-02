@@ -1,5 +1,18 @@
 let prod = []
 
+
+function toggleActive(event) {
+    var target = event.target || event.srcElement;
+    var buttonList = document.querySelectorAll(".nav-btn");
+    buttonList.forEach(function(button) {
+        if (button === target && !button.classList.contains("active")) {
+            return button.classList.add("active");
+        }
+        
+      return button.classList.remove("active");
+    });
+  }
+
 fetch('data/data.json')
 .then(response=>response.json())
 .then(data=>{
@@ -16,6 +29,7 @@ const myAdd = document.getElementById('content1')
     
     suggNo.innerHTML=`${prod.length} Suggestions`
     myAdd.innerHTML=''
+    if(prod.length>1){
     for(let i=0;i<prod.length;i++){
         
         const myContentInner = document.createElement('div')
@@ -42,7 +56,22 @@ const myAdd = document.getElementById('content1')
       
  
 }  
+} else{
+    myAdd.innerHTML=`  <div class="content-1">
+    <div class="no-content">
+     <center><img src="assets/suggestions//illustration-empty.svg">
+     <p class="h1 no-yet">There is no feedback yet</p>
+     <p class="body-1">Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app</p>
+     <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top h4"><img class="arrow-plus" id="pad-20" src="assets/shared/icon-plus.svg">Add Feedback</button>
+ </center>
+
+    </div>
+
+ </div>`
+
 }
+}
+
 const navBtns = document.getElementsByClassName('nav-btn');
 
 
@@ -58,15 +87,15 @@ radiobutton.clicked= true;
 
 
 function filterTag(e){
-    console.log(e.target)
+    toggleActive(e)
     let value = e.target.innerHTML
     let result = value.toLowerCase()
     console.log(value)
     let newValue=[]
     console.log(prod)
 
-    event.target.style.backgroundColor='#4661E6';
-    event.target.style.color='white';
+    // event.target.style.backgroundColor='#4661E6';
+    // event.target.style.color='white';
     if(value==='All'){
         newValue=prod
         displayData(newValue)

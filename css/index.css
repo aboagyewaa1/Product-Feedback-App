@@ -74,7 +74,7 @@ body{
   margin-top: 5px;
 }
 
-.nav-btn:active{
+.active{
     background-color: #4661E6;
     color: white;
 }
@@ -90,9 +90,14 @@ body{
     margin-block-start: 0;
 
 }
-/* #road-text{
-   
-} */
+.no-content{
+    margin: 111px 24.97% 110px 25.33%;
+}
+.no-yet{
+    margin-top: 53px;
+    margin-bottom: 16px;
+}
+
 #view-text{
     margin-left: auto;
     color: #4661E6;
@@ -177,8 +182,8 @@ body{
     border-style: none;
     border-radius: 5px;
     margin-right: 15px;
-    /* height: 24px;
-    padding: 20px; */
+    height: 44px;
+    /* padding: 20px; */
     
 }
 .add-btn-top{
@@ -190,6 +195,10 @@ body{
 }
 .arrow-plus{
 
+}
+.content-1{
+    background-color: white;
+    margin: 0;
 }
 
 /*page content*/
