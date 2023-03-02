@@ -12,5 +12,9 @@
         <img src="assets/shared/icon-arrow-left.svg">
         <p>Go Back</p>
         <button>Edit Feedback</button>
+        <script>
+            const queryParameters = new URL(window.location.href)
+            console.log(queryParameters.searchParams.get('id'))
+        </script>
     </div>
 </html>

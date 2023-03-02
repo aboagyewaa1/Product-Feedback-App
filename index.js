@@ -1,6 +1,34 @@
 let prod = []
 
 
+function nextPage(){
+
+}
+
+const formEl = document.querySelector('.form');
+
+formEl?.addEventListener('submit',event=>{
+    event.preventDefault();
+
+
+    const formData = new FormData(formEl);
+    console.log(formData.get('feedback-title'))
+
+
+    const data = Object.fromEntries(formData)
+    fetch('https://product-feedback-api-hry7.onrender.com/productRequests',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(data)
+        
+    })//.then(res => res.json())
+    // .then(data=>console.log(data))
+    console.log(data)
+})
+
+
 function toggleActive(event) {
     var target = event.target || event.srcElement;
     var buttonList = document.querySelectorAll(".nav-btn");
@@ -13,10 +41,12 @@ function toggleActive(event) {
     });
   }
 
-fetch('data/data.json')
+fetch('https://product-feedback-api-hry7.onrender.com/productRequests')
 .then(response=>response.json())
 .then(data=>{
-    prod = data.productRequests
+    console.log(data)
+    prod = data
+    console.log(prod)
     displayData(prod)
 })
 
@@ -41,7 +71,8 @@ const myAdd = document.getElementById('content1')
             <p class="up-text h4">${prod[i].upvotes}</p>
         </div>
         <div class="content-mid">
-            <p class="h3 marg-0 dark-text" id="title-A">${prod[i].title}</p>
+        <a href="feedbackDetails.html?id=${prod[i].id}">
+            <p class="h3 marg-0 dark-text" id="title-A">${prod[i].title}</p></a>
             <p class="body-1 marg-0 light-text">${prod[i].description}</p>
             <p class="marg-0 tag body-3">${prod[i].category}</p>
 
@@ -82,8 +113,8 @@ for (let i = 0; i < navBtns.length; i++) {
  
  
 }
-radiobutton = document.getElementById("all-btn");
-radiobutton.clicked= true;
+// radiobutton = document.getElementById("all-btn");
+// radiobutton.clicked= true;
 
 
 function filterTag(e){
@@ -130,3 +161,4 @@ function filterTag(e){
 
 
 }
+

@@ -10,30 +10,32 @@
 </head>
 <body>
     <img  id="back-img" src="assets/shared/icon-new-feedback.svg">
-    <div class="form">
+    <form class="form" id="myForm">
         <p class="h1 form-title">Create New Feedback</p>
         <div class="form-div">
             <p class="h4">Feedback Title</p>
             <p class="body-2 light-text">Add a short,descriptive headline</p>
-            <input class="input-box">
+            <input name="title" class="input-box">
         </div>
         <div class="form-div">
             <p class="h4">Category</p>
             <p class="body-2 light-text ">Choose a category for your feedback</p>
-            <input class="input-box">
+            <input name="category"class="input-box">
         </div>
         <div class="form-div last-form-div">
             <p class="h4">Feedback Detail</p>
             <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
-            <input class="input-box-big">
+            <input name="description" class="input-box-big">
         </div>
 
         <div class="btn-div">
         <button class="cancel-btn">Cancel</button>
-        <button class="add-btn">Add Feedback</button>
+        <button type='submit' class="add-btn">Add Feedback</button>
        </div>
-    </div>
+    </form>
 
     
+
+    <script src="index.js"></script>
 </body>
 </html>
