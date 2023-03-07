@@ -5,18 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/feedbackDetails.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/feedbackDetails.css">
+   
 </head>
 <body>
     <div class="details-top">
         <img class="back-arrow" src="assets/shared/icon-arrow-left.svg">
-        <p class="go-back h4 light-text">Go Back</p>
+        <p onclick="history.back()" class="go-back h4 light-text">Go Back</p>
         <button onclick="location.href='editFeedback.html'" class="edit-btn h4 flex-end">Edit Feedback</button>   
     </div>
     <div  class="details" id="details-content">
         <div id="details-title"></div>
         <div id="details-comments">
+            <div class="details-comments">
+                <p class="dark-text h3">4 comments</p>
+                <div class="profile" >
+                    <img class="profile-pic"src=${prod.comments[i].user.image}>
+                    <div class="profs">
+                    <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+                    <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+                   </div>
+                    <p class="reply flex-end body-3">Reply</p>
+                </div>
+                <div>
+                    <p class="body-2 light-text">${prod.comments[i].content}</p>
+                </div>
+            <div id="replies">
+                <div class="profile-reply">
+                    <img class="profile-pic"src=${prod.comments[i].user.image}>
+                    <div class="profs">
+                    <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+                    <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+                   </div>
+                    <p class="reply flex-end body-3">Reply</p>
+                </div>
+                <div class="reply-content">
+                    <p class="body-2 light-text">${prod.comments[i].content}</p>
+                </div>
+            </div>
+            </div>
+            </div>
     </div>
     </div>
   
@@ -24,92 +53,8 @@
     <div >
 
     </div>
-    <script>
-        const queryParameters = new URL(window.location.href)
-        // console.log(queryParameters.searchParams.get('id'))
-        let myId = queryParameters.searchParams.get('id')
-        // console.log(myId)
-        let prod = []
-
-        fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`)
-        .then(response=>response.json())
-        .then(data=>{
-       
-        prod = data
-        displayDetails(prod)
-        console.log(prod)
-        console.log(prod.comments[0].user.image)
-        // displayData(prod)
-        })
-
-        function displayDetails(prod){
-
-            const pageDetails = document.getElementById('details-title')
-            const myDetailsInner = document.createElement('div')
-            myDetailsInner.className='content-inner'
-
-            myDetailsInner.innerHTML=`
-            <div class="inner-box-content">              
-         <div class="upvotes">
-            <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-            <p class="up-text h4">${prod.upvotes}</p>
-        </div>
-        <div class="content-mid">
-        <a href="feedbackDetails.html?id=${prod.id}">
-            <p class="h3 marg-0 dark-text" id="title-A">${prod.title}</p></a>
-            <p class="body-1 marg-0 light-text">${prod.description}</p>
-            <p class="marg-0 tag body-3">${prod.category}</p>
-
-        </div>
-        <div class="comments flex-end">
-            <img class="comments-svg" src="assets/shared/icon-comments.svg">
-             <p>${prod.comments ? prod.comments.length:0}</p>
-            </div>
-        </div>`
-
-        pageDetails.append(myDetailsInner)
-
-        for(let i=0; i<prod.comments.length;i++){
-            console.log(prod.comments[i])
-            const detailsComments = document.getElementById('details-comments')
-            const myCommentsInner = document.createElement('div')
-            // myCommentsInner.className='details-comments'
-
-            myCommentsInner.innerHTML=`  <div class="details-comments">
-            <p class="dark-text h3">4 comments</p>
-            <div class="profile">
-                <img class="profile-pic"src=${prod.comments[i].user.image}>
-                <div class="profs">
-                <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-                <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-               </div>
-                <p class="reply flex-end body-3">Reply</p>
-            </div>
-            <div>
-                <p class="body-2 light-text">${prod.comments[i].content}</p>
-            </div>
-            <div class="profile-reply">
-                <img class="profile-pic"src=${prod.comments[i].user.image}>
-                <div class="profs">
-                <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-                <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-               </div>
-                <p class="reply flex-end body-3">Reply</p>
-            </div>
-            <div class="reply-content">
-                <p class="body-2 light-text">${prod.comments[i].content}</p>
-            </div>
-        </div>
-        </div>
-        
-
-            `
-
-            detailsComments.append(myCommentsInner)
-        }
-
+    <script src="feedbackDetails.js">
     
 
-        }
     </script>
 </html>

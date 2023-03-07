@@ -5,6 +5,9 @@ function nextPage(){
 
 }
 
+
+//Add Feedback
+
 const formEl = document.querySelector('.form');
 
 formEl?.addEventListener('submit',event=>{
@@ -28,6 +31,7 @@ formEl?.addEventListener('submit',event=>{
     console.log(data)
 })
 
+//Add/Remove active class from nav btn
 
 function toggleActive(event) {
     var target = event.target || event.srcElement;
@@ -41,21 +45,24 @@ function toggleActive(event) {
     });
   }
 
+  //fetch data on page
+
 fetch('https://product-feedback-api-hry7.onrender.com/productRequests')
 .then(response=>response.json())
 .then(data=>{
-    console.log(data)
+    // console.log(data)
     prod = data
-    console.log(prod)
+    // console.log(prod)
     displayData(prod)
 })
 
 const suggNo = document.getElementById('sugg-no')
    
 const myAdd = document.getElementById('content1')
+//disply data on page
   function displayData(prod){
      
-    console.log(prod)
+    // console.log(prod)
     
     suggNo.innerHTML=`${prod.length} Suggestions`
     myAdd.innerHTML=''
@@ -68,7 +75,7 @@ const myAdd = document.getElementById('content1')
         <div class="inner-box-content">              
          <div class="upvotes">
             <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-            <p class="up-text h4">${prod[i].upvotes}</p>
+            <p class="up-text h4">${prod[i].upvotes?prod[i].upvotes:0}</p>
         </div>
         <div class="content-mid">
         <a href="feedbackDetails.html?id=${prod[i].id}">
@@ -121,7 +128,7 @@ function filterTag(e){
     toggleActive(e)
     let value = e.target.innerHTML
     let result = value.toLowerCase()
-    console.log(value)
+    // console.log(value)
     let newValue=[]
     console.log(prod)
 
@@ -129,7 +136,9 @@ function filterTag(e){
     // event.target.style.color='white';
     if(value==='All'){
         newValue=prod
-        displayData(newValue)
+        console.log(prod)
+        console.log(newValue)
+        displayData(prod)
 
     }
     else if(value==='Bug'){

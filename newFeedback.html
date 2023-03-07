@@ -7,8 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/newFeedback.css">
+    <link rel="stylesheet" href="css/feedbackDetails.css">
 </head>
 <body>
+    <div class="top-2">
+    <img class="back-arrow" src="assets/shared/icon-arrow-left.svg">
+    <p  onclick="history.back()" class="go-back h4 light-text">Go Back</p></div>
     <img  id="back-img" src="assets/shared/icon-new-feedback.svg">
     <form class="form" id="myForm">
         <p class="h1 form-title">Create New Feedback</p>
@@ -20,7 +24,13 @@
         <div class="form-div">
             <p class="h4">Category</p>
             <p class="body-2 light-text ">Choose a category for your feedback</p>
-            <input name="category"class="input-box">
+            <select name="category" class="svg-arrow input-box">
+                <option>Feature</option>
+                <option>UI</option>
+                <option>UX</option>
+                <option>Enhancement</option>
+                <option>Bug</option>
+            </select>
         </div>
         <div class="form-div last-form-div">
             <p class="h4">Feedback Detail</p>
@@ -29,8 +39,8 @@
         </div>
 
         <div class="btn-div">
-        <button class="cancel-btn">Cancel</button>
-        <button type='submit' class="add-btn">Add Feedback</button>
+        <button class="cancel-btn h4">Cancel</button>
+        <button type='submit' class="add-btn h4">Add Feedback</button>
        </div>
     </form>
 

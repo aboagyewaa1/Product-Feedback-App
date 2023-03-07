@@ -16,7 +16,7 @@
 #back-img{
     position: absolute;
     left: 440px;
-    top: -1px; 
+    top: 45px; 
 }
 body{
     margin: auto;
@@ -57,13 +57,15 @@ p{
 }
 .cancel-btn{
     background-color: #3A4374;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
-    margin: auto;
+    /* margin: auto; */
     padding: 10px;
     border-style: none;
     height: 44px;
     width: 93px;
+    margin-right: 16px;
+    
 }
 .last-form-div{
     margin-bottom: 32px;
@@ -71,5 +73,15 @@ p{
 .btn-div{
     margin-left: 45.37%;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
     /* margin-right: 40px */
+}
+
+.top-2{
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: auto;
+    width: 37.5%;
+    margin-bottom: 40px;
 }

@@ -27,10 +27,12 @@
  .back-arrow{
     height: 10px;
     margin-top: 20px;
+    display: inline-block;
  }
 
  .go-back{
     margin-left: 15px;
+    display: inline-block;
  }
 
 .profile-pic{
