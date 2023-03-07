@@ -42,6 +42,11 @@
     display: flex;
     flex-direction: row;
 }
+.profile-reply{
+    margin-left: 45px;
+    display: flex;
+    flex-direction: row;
+}
 
  .details-comments{
     background-color: white;
@@ -49,6 +54,9 @@
  }
  .reply{
     color: #4661e6;
+ }
+ .reply-content{
+    margin-left: 45px;
  }
 
  .profs p{

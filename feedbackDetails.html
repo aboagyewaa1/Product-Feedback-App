@@ -88,7 +88,20 @@
             <div>
                 <p class="body-2 light-text">${prod.comments[i].content}</p>
             </div>
+            <div class="profile-reply">
+                <img class="profile-pic"src=${prod.comments[i].user.image}>
+                <div class="profs">
+                <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+                <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+               </div>
+                <p class="reply flex-end body-3">Reply</p>
+            </div>
+            <div class="reply-content">
+                <p class="body-2 light-text">${prod.comments[i].content}</p>
+            </div>
         </div>
+        </div>
+        
 
             `
 
