@@ -38,7 +38,8 @@ console.log(planned.length)
 for(let i=0;i<planned.length;i++){
     const planbox = document.createElement('div')
     planbox.className='plan-box-1'
-    planbox.innerHTML=` <div class="inner-plan-box">
+    planbox.setAttribute('id','planned-box')
+    planbox.innerHTML=` <div class="inner-plan-box ">
     <div>
     <p class="round road-rnd" id="plan"></p><p id="spc" class="line-p light-text">Planned</p>
     </div>
@@ -70,7 +71,8 @@ plannedList.append(planbox)
 for(let i=0;i<live.length;i++){
     const livebox = document.createElement('div')
     livebox.className='plan-box-1'
-    livebox.innerHTML=` <div class="inner-plan-box">
+    livebox.setAttribute('id','live-box')
+    livebox.innerHTML=` <div class="inner-plan-box ">
     <div>
     <p class="round road-rnd" id="live"></p><p id="spc" class="line-p light-text">Live</p>
     </div>
@@ -101,7 +103,8 @@ liveList.append(livebox)
 for(let i=0;i<progress.length;i++){
     const progressbox = document.createElement('div')
     progressbox.className='plan-box-1'
-    progressbox.innerHTML=` <div class="inner-plan-box">
+    progressbox.setAttribute('id','progress-box')
+    progressbox.innerHTML=` <div class="inner-plan-box progress-box">
     <div>
     <p class="round road-rnd" id="progress"></p><p id="spc" class="line-p light-text">In-Progress</p>
     </div>
@@ -116,8 +119,8 @@ for(let i=0;i<progress.length;i++){
 
     </div>
     <div  class="flex-end">
-        <img class="comments-svg" src="assets/shared/icon-comments.svg">
-        <p>${progress[i].comments?progress[i].comments.length:0}</p>
+        <img class="comments-svg" id="#blk-2" src="assets/shared/icon-comments.svg">
+        <p class="" id="#blk-2">${progress[i].comments?progress[i].comments.length:0}</p>
 
     </div>
 

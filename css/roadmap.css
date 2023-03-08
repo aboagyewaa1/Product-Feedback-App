@@ -4,6 +4,16 @@
 }
 .plan-box-1{
     background-color: white;
+   
+}
+#planned-box{
+    border-top: 5px solid #F49F85; 
+}
+#progress-box{
+    border-top: 5px solid #AD1FEA;
+}
+#live-box{
+    border-top: 5px solid #62BCFA;
 }
 
 .page-1{
@@ -43,4 +53,8 @@
 .last-row{
     display: flex;
     flex-direction: row;
+}
+
+#blk-2{
+   width: fit-content;
 }

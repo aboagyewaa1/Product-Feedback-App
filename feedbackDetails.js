@@ -10,7 +10,7 @@ fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`)
 
 prod = data
 displayDetails(prod)
-editDetails(prod)
+
 // console.log(prod)
 // console.log(prod.comments[0].user.image)
 // displayData(prod)
@@ -103,47 +103,10 @@ replyDiv.append(myReply)
 }
 
 
-// function editDetails(prod){
 
-//     const formDetails = document.getElementById('formA')
-//     formDetails.innerHTML=`<p class="h1 form-title">Editing 'Add a dark theme option'</p>
-//     <div class="form-div">
-//         <p class="h4 dark-text">Feedback Title</p>
-//         <p class="body-2 light-text">Add a short,descriptive headline</p>
-//         <input class="input-box">
-        
-//     </div>
-//     <div class="form-div">
-//         <p class="h4 dark-text">Category</p>
-//         <p class="body-2 light-text ">Choose a category for your feedback</p>
-//         <select class="svg-arrow input-box">
-//             <option>Feature</option>
-//             <option>UI</option>
-//             <option>UX</option>
-//             <option>Enhancement</option>
-//             <option>Bug</option>
-//         </select>
-//     </div>
-//     <div class="form-div">
-//         <p class="h4 dark-text">Update Status</p>
-//         <p class="body-2 light-text ">Change Feedback state</p>
-//         <select class="svg-arrow input-box">
-//             <option>Suggestion</option>
-//             <option>Planned</option>
-//             <option>In-Progress</option>
-//             <option>Live</option>
-//         </select>
-//     </div>
-//     <div class="form-div last-form-div">
-//         <p class="h4 dark-text">Feedback Detail</p>
-//         <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
-//         <input class="input-box-big">
-//     </div>
 
-//     <button class="del-btn h4">Delete</button>
-//     <button class="cancel-btn h4">Cancel</button>
-//     <button class="save-changes-btn h4">Save Changes</button>`
 
-//     console.log(prod)
 
-// }
+
+
+

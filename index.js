@@ -126,19 +126,19 @@ for (let i = 0; i < navBtns.length; i++) {
 
 function filterTag(e){
     toggleActive(e)
-    let value = e.target.innerHTML
+    let value = e.target.innerHTML.trim()
     let result = value.toLowerCase()
-    // console.log(value)
-    let newValue=[]
     console.log(prod)
-
+    let newValue=[]
+    
     // event.target.style.backgroundColor='#4661E6';
     // event.target.style.color='white';
     if(value==='All'){
+        console.log(`${value}--`)
         newValue=prod
         console.log(prod)
         console.log(newValue)
-        displayData(prod)
+        displayData(newValue)
 
     }
     else if(value==='Bug'){
