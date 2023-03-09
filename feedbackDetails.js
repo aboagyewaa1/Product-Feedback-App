@@ -1,7 +1,5 @@
 const queryParameters = new URL(window.location.href)
-// console.log(queryParameters.searchParams.get('id'))
 let myId = queryParameters.searchParams.get('id')
-// console.log(myId)
 let prod = []
 
 fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`)
@@ -11,9 +9,6 @@ fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`)
 prod = data
 displayDetails(prod)
 
-// console.log(prod)
-// console.log(prod.comments[0].user.image)
-// displayData(prod)
 })
 
 
@@ -68,9 +63,9 @@ pageDetails.append(myDetailsInner)
             <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
             <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
            </div>
-            <p class="reply flex-end body-3">Reply</p>
+            <p class="reply flex-end body-3" id="reply-btn">Reply</p>
         </div>
-        <div>
+        <div id="comments-content">
             <p class="body-2 light-text">${prod.comments[i].content}</p>
         </div>
     
@@ -86,7 +81,7 @@ pageDetails.append(myDetailsInner)
             <p class="prof-name h4 dark-text">${prod.comments[i].replies[j].user.name}</p>
             <p class="prof-handle body-2 light-text">@${prod.comments[i].replies[j].user.username}</p>
            </div>
-            <p class="reply flex-end body-3">Reply</p>
+            <p class="reply flex-end body-3" id="reply-btn">Reply</p>
         </div>
         <div class="reply-content">
             <p class="body-2 light-text">${prod.comments[i].replies[j].content}</p>
@@ -115,7 +110,7 @@ pageDetails.append(myDetailsInner)
         <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
         <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
        </div>
-        <p class="reply flex-end body-3">Reply</p>
+        <p class="reply flex-end body-3" id="reply-btn">Reply</p>
     </div>
     <div>
         <p class="body-2 light-text">${prod.comments[i].content}</p>
@@ -127,9 +122,98 @@ pageDetails.append(myDetailsInner)
     
     }
     }
+    const logReply = document.getElementById('comments-content')
+    console.log(logReply)
+    const replyClick = document.getElementsByClassName('reply')
+    for(let i=0; i<replyClick.length;i++){
+        replyClick[i].addEventListener('click', ()=>{
+            const Rbox = document.getElementById('replybox')
+            Rbox.innerHTML=`<input class="reply-input">
+            <button class="reply-btn h4" id="post-reply">Post Reply</button>`
+
+            logReply.append(replyClick)
+
+        });
+    }
+    // replyClick.forEach(btn => {
+
+    //     btn.addEventListener('click', replyComment);
+     
+    //  });
+    // replyClick.addEventListener('click',replyComment)
   
    }
 
+
+  
+
+   function replyComment(){
+    // const Rbox = document.getElementById('replybox')
+
+    // Rbox.innerHTML=`<input class="reply-input">
+    // <button class="reply-btn h4" id="post-reply">Post Reply</button>`
+
+    // if(Rbox.style.display==='none'){
+    //     Rbox.style.display==='block'
+    // }
+   }
+
+   const postComment = document.getElementById('post-comment')
+
+   postComment.addEventListener('click',AddComment)
+
+   function AddComment(){
+    const newComment = document.getElementById('pst-comment').value
+
+    fetch(`https://product-feedback-api-hry7.onrender.com/currentUser`)
+    .then(response=>response.json())
+    .then((response)=>{
+        console.log(response.name)
+        console.log(prod.comments)
+        let comment = {
+            // id:prod.comments.length
+            content:newComment,
+            user:response
+        }
+
+        let updated = prod.comments
+        // console.log(prod.comments)
+        updated.push(comment)
+        // console.log(prod.comments)
+
+
+        fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`, { 
+            method: "PATCH",
+            headers: {
+                "Content-Type" : "application/json"
+              },
+              body: JSON.stringify({comments:updated}
+              )
+            })
+        .then(response=>response.json())
+       .then(c=>{
+        prod=c
+        console.log(prod)
+        location.reload();
+    
+       }
+    
+       )
+
+    })
+ 
+   }
+
+
+   const postReply = document.getElementById('post-reply')
+   console.log(postReply)
+
+   postReply.addEventListener('click',AddReply)
+
+   function AddReply(){
+    console.log(prod.comments.replies)
+    console.log('hi')
+   }
 
       
   

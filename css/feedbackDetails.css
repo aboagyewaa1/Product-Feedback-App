@@ -93,4 +93,22 @@
    color: white;
    padding: 15px;
  }
+ #reply-box{
+   display: none;
+ }
  
+ .reply-input{
+   width: 70.61%;
+   height: 80px;
+   background-color: #F7F8FD;
+   border-radius: 5px;
+ }
+
+ .reply-btn{
+   padding: 10px 20px;
+   background-color: #AD1FEA;
+   border-style: none;
+   color: white;
+   border-radius: 10px;
+   margin-left: 1px;
+ }
