@@ -32,8 +32,6 @@ function displayDetails(prod){
     const replyDiv = document.getElementById('replies')
     const myDetailsInner = document.createElement('div')
     myDetailsInner.className='content-inner'
-   
-
     myDetailsInner.innerHTML=`
     <div class="inner-box-content">              
  <div class="upvotes">
@@ -52,18 +50,65 @@ function displayDetails(prod){
      <p>${prod.comments ? prod.comments.length:0}</p>
     </div>
 </div>`
-
-console.log(prod.comments.replies)
-
 pageDetails.append(myDetailsInner)
+   console.log(prod.comments)
 
-for(let i=0; i<prod.comments.length;i++){
-  
-    const detailsComments = document.getElementById('details-comments')
-    const myCommentsInner = document.createElement('div')
+
+
+   const detailsComments = document.getElementById('details-comments')
+   const myCommentsInner = document.createElement('div')
+
+   for(let i =0; i<prod.comments.length;i++){
+    if(prod.comments[i].replies){
+            myCommentsInner.innerHTML=`
+            <div class="details-comments">
+        <div class="profile" id="myProfile">
+            <img class="profile-pic"src=${prod.comments[i].user.image}>
+            <div class="profs">
+            <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+            <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+           </div>
+            <p class="reply flex-end body-3">Reply</p>
+        </div>
+        <div>
+            <p class="body-2 light-text">${prod.comments[i].content}</p>
+        </div>
+    
+        ` 
+    
+            for(let j=0;j<prod.comments[i].replies.length;j++){
+                console.log(prod.comments[i].replies[j].user.image)
+                const myReply = document.createElement('div')
+               myReply.className='content-inner'
+                myReply.innerHTML=` <div class="profile-reply">
+            <img class="profile-pic"src=${prod.comments[i].replies[j].user.image}>
+            <div class="profs">
+            <p class="prof-name h4 dark-text">${prod.comments[i].replies[j].user.name}</p>
+            <p class="prof-handle body-2 light-text">@${prod.comments[i].replies[j].user.username}</p>
+           </div>
+            <p class="reply flex-end body-3">Reply</p>
+        </div>
+        <div class="reply-content">
+            <p class="body-2 light-text">${prod.comments[i].replies[j].content}</p>
+        </div>
+    </div>
+    </div>`
+    replyDiv?.append(myReply)
+    detailsComments.append(myCommentsInner)
+    
+    
+            }
+       
+        }  
+
+
+
+
+          else{
+    
 
     myCommentsInner.innerHTML=`  <div class="details-comments">
-    <p class="dark-text h3">4 comments</p>
+   
     <div class="profile" id="myProfile">
         <img class="profile-pic"src=${prod.comments[i].user.image}>
         <div class="profs">
@@ -76,38 +121,27 @@ for(let i=0; i<prod.comments.length;i++){
         <p class="body-2 light-text">${prod.comments[i].content}</p>
     </div>
 
-    `
-    
-    if(prod.comments[i].replies){
-        console.log(prod.comments[i].replies)
-        for(let j=0;i<prod.comments[i].replies.length;i++){
-            console.log(prod.comments[i].replies[j])
-            const myReply = document.createElement('div')
-           myReply.className='content-inner'
-            myReply.innerHTML=` <div class="profile-reply">
-        <img class="profile-pic"src=${prod.comments[i].replies[j].user.image}>
-        <div class="profs">
-        <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-        <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-       </div>
-        <p class="reply flex-end body-3">Reply</p>
-    </div>
-    <div class="reply-content">
-        <p class="body-2 light-text">${prod.comments[i].content}</p>
-    </div>
-</div>
-</div>`
-replyDiv.append(myReply)
-
-        }
-    }
-
+    ` 
     detailsComments.append(myCommentsInner)
-}
+
+    
+    }
+    }
+  
+   }
+
+
+      
+  
+   
+   
+
+    
+ 
 
 
 
-}
+
 
 
 
