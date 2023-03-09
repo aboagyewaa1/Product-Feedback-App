@@ -27,13 +27,13 @@ function editDetails(prod){
     <div class="form-div">
         <p class="h4 dark-text">Feedback Title</p>
         <p class="body-2 light-text">Add a short,descriptive headline</p>
-        <input class="input-box" value="${prod.title}">
+        <input class="input-box" name="title" value="${prod.title}">
         
     </div>
     <div class="form-div">
         <p class="h4 dark-text">Category</p>
         <p class="body-2 light-text ">Choose a category for your feedback</p>
-        <select class="svg-arrow input-box" id="input-cat">
+        <select name="category" class="svg-arrow input-box" id="input-cat">
             <option value="feature">Feature</option>
             <option value="ui">UI</option>
             <option value="ux">UX</option>
@@ -44,7 +44,7 @@ function editDetails(prod){
     <div class="form-div">
         <p class="h4 dark-text">Update Status</p>
         <p class="body-2 light-text ">Change Feedback state</p>
-        <select class="svg-arrow input-box"  id="input-state">
+        <select name="status" class="svg-arrow input-box"  id="input-state">
             <option value="suggestion">Suggestion</option>
             <option value="planned">Planned</option>
             <option value="in-progress">In-Progress</option>
@@ -54,7 +54,7 @@ function editDetails(prod){
     <div class="form-div last-form-div">
         <p class="h4 dark-text">Feedback Detail</p>
         <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
-        <input class="input-box-big" value="${prod.description}">
+        <input name="description" class="input-box-big" value="${prod.description}">
     </div>
 
     <button class="del-btn h4">Delete</button>
@@ -102,10 +102,10 @@ function editDetails(prod){
 
 function editFeedback(e){
     e.preventDefault()
-    console.log(myId1)
+    // console.log(document.getElementById('edit'))  
 
     const formEdit = new FormData(document.getElementById('edit'));
-    console.log(formEdit.values)
+    console.log(formEdit)
     const dataEdit = Object.fromEntries(formEdit)
     console.log(dataEdit)
     fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId1}`, { 
@@ -113,10 +113,7 @@ function editFeedback(e){
   headers: {
       "Content-Type" : "application/json"
     },
-  body: JSON.stringify(
-    {
-      "likes": 5           // we are changing the "likes" value to 5
-    }
+  body: JSON.stringify(dataEdit
   )
 })
 
