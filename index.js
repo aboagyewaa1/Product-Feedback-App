@@ -15,7 +15,7 @@ formEl?.addEventListener('submit',event=>{
 
 
     const formData = new FormData(formEl);
-    console.log(formData.get('feedback-title'))
+    // console.log(formData.get('feedback-title'))
 
 
     const data = Object.fromEntries(formData)

@@ -41,6 +41,8 @@ body{
     border-radius: 5px;
     height: 96px;
     width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 select{
     width: 200px;

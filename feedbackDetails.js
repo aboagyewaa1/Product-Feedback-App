@@ -17,6 +17,15 @@ displayDetails(prod)
 })
 
 
+document.getElementById('editRoute').addEventListener('click', (e)=>{
+    const queryParameters1 = new URL(window.location.href)
+
+let myId1 = queryParameters1.searchParams.get('id')
+window.location=`editFeedback.html?id=${myId1}`
+    
+})
+
+
 function displayDetails(prod){
 
     const pageDetails = document.getElementById('details-title')
@@ -49,11 +58,9 @@ console.log(prod.comments.replies)
 pageDetails.append(myDetailsInner)
 
 for(let i=0; i<prod.comments.length;i++){
-    // console.log(prod.comments[i])
-    
+  
     const detailsComments = document.getElementById('details-comments')
     const myCommentsInner = document.createElement('div')
-    // myCommentsInner.className='details-comments'
 
     myCommentsInner.innerHTML=`  <div class="details-comments">
     <p class="dark-text h3">4 comments</p>

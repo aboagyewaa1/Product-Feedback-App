@@ -26,7 +26,7 @@
                     <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
                     <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
                    </div>
-                    <p class="reply flex-end body-3">Reply</p>
+                    <p class="reply flex-end body-3" id="reply-btn">Reply</p>
                 </div>
                 <div>
                     <p class="body-2 light-text">${prod.comments[i].content}</p>
@@ -38,16 +38,23 @@
                     <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
                     <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
                    </div>
-                    <p class="reply flex-end body-3">Reply</p>
+                    <p class="reply flex-end body-3" id="reply-btn">Reply</p>
                 </div>
                 <div class="reply-content">
                     <p class="body-2 light-text">${prod.comments[i].content}</p>
                 </div>
+                
+            </div>
+            <div>
+                 <p class="h3 dark-text">Add Comment</p>
+                 <input>
+                 <button>Post Comment</button>
             </div>
             </div>
             </div>
     </div>
     </div>
+  
   
 
     <div >
