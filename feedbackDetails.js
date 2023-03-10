@@ -22,8 +22,6 @@ document.getElementById('editRoute').addEventListener('click', (e) => {
 
 
 function displayDetails(prod) {
-    console.log(prod)
-
     const pageDetails = document.getElementById('details-title')
     const replyDiv = document.getElementById('replies')
     const myDetailsInner = document.createElement('div')
@@ -66,14 +64,17 @@ function displayDetails(prod) {
                     </div>
                     <div id="comments-content">
                         <p class="body-2 light-text">${prod.comments[i].content}</p>
+                        <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
                     </div>
             `
 
             for (let j = 0; j < prod.comments[i].replies.length; j++) {
                 console.log(prod.comments[i].replies[j].user.image)
                 const myReply = document.createElement('div')
+                console.log(prod.comments[i].replies)
                 myReply.className = 'content-inner'
-                myReply.innerHTML = ` <div class="profile-reply">
+                myReply.innerHTML = `
+                <div class="reply-div"> <div class="profile-reply">
             <img class="profile-pic"src=${prod.comments[i].replies[j].user.image}>
             <div class="profs">
             <p class="prof-name h4 dark-text">${prod.comments[i].replies[j].user.name}</p>
@@ -82,10 +83,14 @@ function displayDetails(prod) {
             <p class="reply flex-end body-3" id="reply-btn">Reply</p>
         </div>
         <div class="reply-content">
-            <p class="body-2 light-text">${prod.comments[i].replies[j].content}</p>
+            <p class="body-2 light-text "> 
+            <p class="replyTo h4">@${prod.comments[i].replies[j].replyingTo}</p>
+            ${prod.comments[i].replies[j].content}</p>
+            <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
         </div>
+
     </div>
-    </div>`
+    </div></div>`
                 replyDiv?.append(myReply)
                 detailsComments.append(myCommentsInner)
 
@@ -122,22 +127,18 @@ function displayDetails(prod) {
         }
     }
 
-    console.log(detailsComments)
+    // console.log(detailsComments)
 
-    // const characters = document.getElementById('pst-comments').length
-    // console.log(characters)
+    
     const logReply = document.getElementById('comments-content')
-    console.log(logReply)
+    // console.log(logReply)
     const replyClick = document.getElementsByClassName('reply')
     for (let i = 0; i < replyClick.length; i++) {
         replyClick[i].addEventListener('click', () => {
             const id = replyClick[i].dataset.id;
-
             const Rbox = document.querySelector(`[data-target="${id}"]`)
-            Rbox.innerHTML = `<input class="reply-input">
+            Rbox.innerHTML = `<input class="reply-input" id="pst-reply">
             <button class="reply-btn h4" id="post-reply">Post Reply</button>`
-
-
         });
     }
 
@@ -148,8 +149,6 @@ function displayDetails(prod) {
 
 
 const postComment = document.getElementById('post-comment')
-
-
 postComment.addEventListener('click', AddComment)
 
 function AddComment() {
@@ -191,15 +190,72 @@ function AddComment() {
 
         })
 
+       
+
+}
+const postReply = document.getElementById('post-reply')
+postReply?.addEventListener('click', AddReply)
+
+function AddReply() {
+    const newReply = document.getElementById('pst-reply').value
+
+    fetch(`https://product-feedback-api-hry7.onrender.com/currentUser`)
+        .then(response => response.json())
+        .then((response) => {
+            console.log(response.name)
+            console.log(prod.comments.replies)
+
+            let reply = {
+                // id:prod.comments.length
+                content: newReply,
+                user: response,
+                replyingTo:prod.comments.user.username
+            }
+
+            let updatedReply = prod.comments.replies
+            updated.push(reply)
+           
+
+
+            fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ replies: updatedReply }
+                )
+            })
+                .then(response => response.json())
+                .then(c => {
+                    prod = r
+                    console.log(prod)
+                    location.reload();
+
+                }
+
+                )
+
+        })
+
+       
+
 }
 
 
+const postChar = document.getElementById('pst-comment')
+postChar.addEventListener('keyup', displayChar)
 
 
 function displayChar() {
+    const charleft = document.getElementById('char-length')
+    const userInput = document.getElementById('pst-comment').value 
+    const character = 250 -userInput.length
+    
+    
+    charleft.innerHTML=`${character} characters left
+    `
 
-    const userInput = document.getElementById('pst-comment')
-    console.log(userInput)
+   
 
 }
 

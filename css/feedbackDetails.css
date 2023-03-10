@@ -112,3 +112,13 @@
    border-radius: 10px;
    margin-left: 1px;
  }
+
+ .reply-div{
+   display: flex;
+   flex-direction: column;
+ }
+
+ .replyTo{
+   display: inline-block;
+   color: #AD1FEA;
+ }

@@ -20,24 +20,7 @@
         <div id="details-comments">
             <div class="details-comments">
                 <p class="dark-text h3">4 comments</p>
-             
-                <!-- <div id="replybox">
-                    <input class="reply-input">
-                    <button class="reply-btn h4">Post Reply</button> 
-                </div>-->
-            <div id="replies">
-                <!-- <div class="profile-reply">
-                    <img class="profile-pic"src=${prod.comments[i].user.image}>
-                    <div class="profs">
-                    <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-                    <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-                   </div>
-                    <p class="reply flex-end body-3" id="reply-btn">Reply</p>
-                </div>
-                <div class="reply-content">
-                    <p class="body-2 light-text">${prod.comments[i].content}</p>
-                </div>
-                 -->
+            <div id="replies">      
             </div>
            
             </div>
@@ -45,8 +28,8 @@
             </div>
             <div class="add-comments">
                 <p class="h3 dark-text">Add Comment</p>
-                <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here" onchange="displayChar()">
-                <p id="char-length">250 characters left</p>
+                <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here" >
+                <p id="char-length"></p>
                 <button class="post-btn h4" id="post-comment">Post Comment</button>
            </div>
     </div>
@@ -66,8 +49,8 @@
 </html>
 
 
-
-   <!-- <div class="profile" >
+<!-- 
+   <div class="profile" >
                     <img class="profile-pic"src=${prod.comments[i].user.image}>
                     <div class="profs">
                     <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
