@@ -21,10 +21,10 @@
             <div class="details-comments">
                 <p class="dark-text h3">4 comments</p>
              
-                <div id="replybox">
-                    <!-- <input class="reply-input">
-                    <button class="reply-btn h4">Post Reply</button> -->
-                </div>
+                <!-- <div id="replybox">
+                    <input class="reply-input">
+                    <button class="reply-btn h4">Post Reply</button> 
+                </div>-->
             <div id="replies">
                 <!-- <div class="profile-reply">
                     <img class="profile-pic"src=${prod.comments[i].user.image}>
@@ -45,7 +45,8 @@
             </div>
             <div class="add-comments">
                 <p class="h3 dark-text">Add Comment</p>
-                <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here">
+                <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here" onchange="displayChar()">
+                <p id="char-length">250 characters left</p>
                 <button class="post-btn h4" id="post-comment">Post Comment</button>
            </div>
     </div>
@@ -57,6 +58,8 @@
 
     </div>
     <script src="feedbackDetails.js">
+
+      
     
 
     </script>
