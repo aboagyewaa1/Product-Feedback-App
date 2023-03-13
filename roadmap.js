@@ -8,6 +8,46 @@ fetch('data/data.json')
 })
 
 
+const myNavs=document.querySelectorAll('.nav-l')
+
+for(const my of myNavs){
+    my.addEventListener('click',()=>{
+        const id1 = my.getAttribute('id')
+    //    id1.classList.remove('d-none')
+        if(id1 == 'plan-div') {
+            document.getElementById('planned').classList.add('d-block')
+            document.getElementById('in-progress').classList.add('d-none')
+            document.getElementById('in-progress').classList.remove('d-block')
+            document.getElementById('live-1').classList.remove('d-block')
+            //top
+            document.getElementById('plan-top').classList.add('d-block')
+            document.getElementById('prog-top').classList.remove('d-block')
+            document.getElementById('live-top').classList.remove('d-block')
+        }
+        else if(id1 == 'prog-div'){
+            document.getElementById('in-progress').classList.add('d-block')
+            document.getElementById('planned').classList.remove('d-block')
+            document.getElementById('live-1').classList.remove('d-block')
+              //top
+              document.getElementById('plan-top').classList.remove('d-block')
+              document.getElementById('prog-top').classList.remove('d-none')
+              document.getElementById('live-top').classList.remove('d-block')
+          
+        }
+         else if(id1=='live-div') {
+            document.getElementById('live-1').classList.add('d-block')
+            document.getElementById('planned').classList.remove('d-block')
+            document.getElementById('in-progress').classList.remove('d-block')
+                          //top
+           document.getElementById('plan-top').classList.remove('d-block')
+         document.getElementById('prog-top').classList.remove('d-block')
+        document.getElementById('live-top').classList.add('d-block')
+          
+        }
+    })
+}
+
+
 
 function filterStatus (prod){
     let planned =[]
@@ -134,4 +174,7 @@ progressList.append(progressbox)
 }
 
 }
+
+
+
 
