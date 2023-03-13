@@ -62,7 +62,23 @@ const myAdd = document.getElementById('content1')
 //disply data on page
   function displayData(prod){
      
-    // console.log(prod)
+    console.log(prod)
+
+    let planned =[]
+    let progress =[]
+    let live =[]
+    
+    planned = prod.filter(stat=>stat.status==='planned')
+    progress = prod.filter(stat=>stat.status==='in-progress')
+    live = prod.filter(stat=>stat.status==='live')
+
+    const planL1 = document.getElementById('len-plan')
+const progL1 = document.getElementById('len-prog')
+const liveL1 = document.getElementById('len-live')
+
+planL1.innerHTML=planned.length
+progL1.innerHTML=progress.length
+liveL1.innerHTML=live.length
     
     suggNo.innerHTML=`${prod.length} Suggestions`
     myAdd.innerHTML=''
@@ -171,3 +187,53 @@ function filterTag(e){
 
 }
 
+// document.getElementById('hamburger').addEventListener('click',()=>{
+    const icons = document.querySelectorAll('.hamburger')
+    for (const icon of icons) {
+        icon.addEventListener('click', () => {
+            const id = icon.getAttribute('id')
+            icon.classList.remove('active1')
+            if(id == 'icon-open') {
+                document.getElementById('icon-close').classList.add('active1')
+                document.getElementById('mobile-sidebar').classList.add('active1')
+            } else {
+                document.getElementById('icon-open').classList.add('active1')
+                document.getElementById('mobile-sidebar').classList.remove('active1')
+            }
+        })
+    }
+            // document.getElementById("mobile-sidebar").style.width = "100%";
+    //   document.getElementById("top-nav-1").style.marginLeft = "250px";
+    // console.log('hi')
+    
+        // })
+
+
+        // sorting elements on page
+
+
+        document.getElementById('sort1').addEventListener('change',()=>{
+            switch(document.getElementById('sort1').value){
+                case 'most-upvotes':
+                    displayData([...prod].sort((prev, next) => {
+                        return prev.upvotes > next.upvotes ? -1 : 1;
+                    }))
+                    break;
+
+                case 'least-upvotes':
+                    displayData([...prod].sort((prev, next) => {
+                        return prev.upvotes < next.upvotes ? -1 : 1;
+                    }))
+                    break;
+                case 'most-comments':
+                    displayData([...prod].sort((prev, next) => {
+                        return (prev.comments?.length ?? 0) > (next.comments?.length ?? 0) ? -1 : 1;
+                    }))
+                    break;
+                case 'least-comments':
+                    displayData([...prod].sort((prev, next) => {
+                        return (prev.comments?.length ?? 0) < (next.comments?.length ?? 0) ? -1 : 1;
+                    }))
+                    break;
+            }
+        })

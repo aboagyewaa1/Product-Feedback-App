@@ -87,3 +87,18 @@ p{
     width: 37.5%;
     margin-bottom: 40px;
 }
+
+ /*Tablet view*/
+ @media screen and (max-width: 950px) and (min-width: 540px) {
+  .form{
+    width: 70.31%;
+    height: 685px;
+  }
+  .top-2{
+    width: 70.31%;
+    margin-top: 56px;
+  }
+ 
+    
+    
+ }

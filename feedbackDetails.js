@@ -42,13 +42,12 @@ function displayDetails(prod) {
             <div class="comments flex-end">
                 <img class="comments-svg" src="assets/shared/icon-comments.svg">
                 <p>${prod.comments ? prod.comments.length : 0}</p>
-                </div>
+            </div>
         </div>
     `
     pageDetails.append(myDetailsInner)
 
     const detailsComments = document.getElementById('details-comments')
-
     for (let i = 0; i < prod.comments.length; i++) {
         const myCommentsInner = document.createElement('div')
         if (prod.comments[i].replies) {
@@ -57,79 +56,68 @@ function displayDetails(prod) {
                     <div class="profile" id="myProfile">
                         <img class="profile-pic"src=${prod.comments[i].user.image}>
                         <div class="profs">
-                        <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-                        <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-                    </div>
+                            <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+                            <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+                        </div>
                         <p class="reply flex-end body-3" id="reply-btn">Reply</p>
                     </div>
                     <div id="comments-content">
                         <p class="body-2 light-text">${prod.comments[i].content}</p>
+                        <div id='replies-${prod.comments[i].id}' class="replies"></div>
                         <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
                     </div>
+                </div>
             `
-
-            for (let j = 0; j < prod.comments[i].replies.length; j++) {
-                console.log(prod.comments[i].replies[j].user.image)
-                const myReply = document.createElement('div')
-                console.log(prod.comments[i].replies)
-                myReply.className = 'content-inner'
-                myReply.innerHTML = `
-                <div class="reply-div"> <div class="profile-reply">
-            <img class="profile-pic"src=${prod.comments[i].replies[j].user.image}>
-            <div class="profs">
-            <p class="prof-name h4 dark-text">${prod.comments[i].replies[j].user.name}</p>
-            <p class="prof-handle body-2 light-text">@${prod.comments[i].replies[j].user.username}</p>
-           </div>
-            <p class="reply flex-end body-3" id="reply-btn">Reply</p>
-        </div>
-        <div class="reply-content">
-            <p class="body-2 light-text "> 
-            <p class="replyTo h4">@${prod.comments[i].replies[j].replyingTo}</p>
-            ${prod.comments[i].replies[j].content}</p>
-            <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
-        </div>
-
-    </div>
-    </div></div>`
-                replyDiv?.append(myReply)
-                detailsComments.append(myCommentsInner)
-
-
-            }
-
-        }
-
-
-
-
-        else {
-
-            console.log('Hello')
-            myCommentsInner.innerHTML = `  <div id='comments-${prod.comments[i].id}' class="details-comments">
-   
-    <div class="profile" id="myProfile">
-        <img class="profile-pic"src=${prod.comments[i].user.image}>
-        <div class="profs">
-        <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
-        <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
-       </div>
-        <p class="reply flex-end body-3" data-id='${prod.comments[i].id}' id="reply-btn">Reply</p>
-    </div>
-    <div>
-        <p class="body-2 light-text">${prod.comments[i].content}</p>
-        <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
-    </div>
-
-    `
             detailsComments.append(myCommentsInner)
 
-
+            for (let j = 0; j < prod.comments[i].replies.length; j++) {
+                const myReply = document.createElement('div')
+                myReply.className = 'content-inner'
+                myReply.innerHTML = `
+                    <div class="reply-div"> 
+                        <div class="profile-reply">
+                            <img class="profile-pic"src=${prod.comments[i].replies[j].user.image}>
+                            <div class="profs">
+                                <p class="prof-name h4 dark-text">${prod.comments[i].replies[j].user.name}</p>
+                                <p class="prof-handle body-2 light-text">@${prod.comments[i].replies[j].user.username}</p>
+                            </div>
+                            <p class="reply flex-end body-3" id="reply-btn">Reply</p>
+                        </div>
+                        <div class="reply-content">
+                            <p class="body-2 light-text "> 
+                            <p class="replyTo h4">@${prod.comments[i].replies[j].replyingTo}</p>
+                            ${prod.comments[i].replies[j].content}</p>
+                            <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
+                        </div>
+                    </div>
+                `
+                
+                document.querySelector(`#replies-${prod.comments[i].id}`)?.append(myReply)
+            }
+        } else {
+            myCommentsInner.innerHTML = `  
+                <div id='comments-${prod.comments[i].id}' class="details-comments">
+                    <div class="profile" id="myProfile">
+                        <img class="profile-pic"src=${prod.comments[i].user.image}>
+                        <div class="profs">
+                            <p class="prof-name h4 dark-text">${prod.comments[i].user.name}</p>
+                            <p class="prof-handle body-2 light-text">@${prod.comments[i].user.username}</p>
+                        </div>
+                        <p class="reply flex-end body-3" data-id='${prod.comments[i].id}' id="reply-btn">Reply</p>
+                    </div>
+                    <div>
+                        <p class="body-2 light-text">${prod.comments[i].content}</p>
+                        <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
+                    </div>
+                </div>
+            `
+            detailsComments.append(myCommentsInner)
         }
     }
 
     // console.log(detailsComments)
 
-    
+
     const logReply = document.getElementById('comments-content')
     // console.log(logReply)
     const replyClick = document.getElementsByClassName('reply')
@@ -137,10 +125,17 @@ function displayDetails(prod) {
         replyClick[i].addEventListener('click', () => {
             const id = replyClick[i].dataset.id;
             const Rbox = document.querySelector(`[data-target="${id}"]`)
-            Rbox.innerHTML = `<input class="reply-input" id="pst-reply">
-            <button class="reply-btn h4" id="post-reply">Post Reply</button>`
+
+            Rbox.innerHTML = `
+                <input class="reply-input" name='reply-box-${id}' id="pst-reply">
+                <button class="reply-btn h4" id="post-reply" data-comment='${id}' name='reply-box-${id}'>Post Reply</button>
+            `
+
+            const postReply = document.querySelector(`button[name="reply-box-${id}"]`)
+            postReply?.addEventListener('click', AddReply)
         });
     }
+
 
 
 }
@@ -167,7 +162,7 @@ function AddComment() {
 
             let updated = prod.comments
             updated.push(comment)
-           
+
 
 
             fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`, {
@@ -190,55 +185,58 @@ function AddComment() {
 
         })
 
-       
+
 
 }
-const postReply = document.getElementById('post-reply')
-postReply?.addEventListener('click', AddReply)
+
 
 function AddReply() {
-    const newReply = document.getElementById('pst-reply').value
+    const newReply = document.querySelector(`input[name='${this.getAttribute('name')}']`).value
+    const commentId = this.dataset.comment;
 
     fetch(`https://product-feedback-api-hry7.onrender.com/currentUser`)
         .then(response => response.json())
         .then((response) => {
-            console.log(response.name)
-            console.log(prod.comments.replies)
+            for (let i = 0; i < prod.comments.length; i++) {
+                const comment = prod.comments[i];
 
-            let reply = {
-                // id:prod.comments.length
-                content: newReply,
-                user: response,
-                replyingTo:prod.comments.user.username
+                if (comment.id == commentId) {  
+                    let reply = {
+                        content: newReply,
+                        user: response,
+                        replyingTo: comment.user.username
+                    }                  
+                    if (Object.hasOwnProperty.call(comment, 'replies')) {
+                        comment.replies.push(reply)
+
+                    } else {
+                        comment['replies'] = [reply]
+
+                    }
+
+                    prod.comments[i] = comment
+                }
             }
 
-            let updatedReply = prod.comments.replies
-            updated.push(reply)
-           
-
+            // let updatedReply = prod.comments.replies
+            // updatedReply.push(reply)
 
             fetch(`https://product-feedback-api-hry7.onrender.com/productRequests/${myId}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ replies: updatedReply }
+                body: JSON.stringify({ comments: prod.comments }
                 )
             })
                 .then(response => response.json())
                 .then(c => {
-                    prod = r
+                    prod = c
                     console.log(prod)
                     location.reload();
-
                 }
-
-                )
-
+            )
         })
-
-       
-
 }
 
 
@@ -248,14 +246,14 @@ postChar.addEventListener('keyup', displayChar)
 
 function displayChar() {
     const charleft = document.getElementById('char-length')
-    const userInput = document.getElementById('pst-comment').value 
-    const character = 250 -userInput.length
-    
-    
-    charleft.innerHTML=`${character} characters left
+    const userInput = document.getElementById('pst-comment').value
+    const character = 250 - userInput.length
+
+
+    charleft.innerHTML = `${character} characters left
     `
 
-   
+
 
 }
 

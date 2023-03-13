@@ -122,3 +122,20 @@
    display: inline-block;
    color: #AD1FEA;
  }
+
+ .replies {
+   margin-top: 2.5rem;
+ }
+
+ /*Tablet view*/
+@media screen and (max-width: 950px) and (min-width: 540px) {
+   .details-top{
+      width: 89.71%;
+   }
+   .details{
+      width: 89.71%;
+   }
+
+   
+   
+}

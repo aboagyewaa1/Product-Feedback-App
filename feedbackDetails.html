@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/feedbackDetails.css">
-   
 </head>
+
 <body>
     <div class="details-top">
         <img class="back-arrow" src="assets/shared/icon-arrow-left.svg">
         <p onclick="history.back()" class="go-back h4 light-text">Go Back</p>
-        <button id="editRoute" class="edit-btn h4 flex-end">Edit Feedback</button>   
+        <button id="editRoute" class="edit-btn h4 flex-end">Edit Feedback</button>
     </div>
-    <div  class="details" id="details-content">
+    <div class="details" id="details-content">
         <div id="details-title"></div>
         <div id="details-comments">
             <div class="details-comments">
                 <p class="dark-text h3">4 comments</p>
-            <div id="replies">      
+                <!-- <div id="replies"></div> -->
             </div>
-           
-            </div>
-           
-            </div>
-            <div class="add-comments">
-                <p class="h3 dark-text">Add Comment</p>
-                <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here" >
-                <p id="char-length"></p>
-                <button class="post-btn h4" id="post-comment">Post Comment</button>
-           </div>
+        </div>
+        <div class="add-comments">
+            <p class="h3 dark-text">Add Comment</p>
+            <input name="add-comment" class="btm-input" id="pst-comment" placeholder="Type your comment here">
+            <p id="char-length"></p>
+            <button class="post-btn h4" id="post-comment">Post Comment</button>
+        </div>
     </div>
-    </div>
-  
-  
-
-    <div >
-
-    </div>
-    <script src="feedbackDetails.js">
-
-      
     
+    <div></div>
 
+    <script src="feedbackDetails.js">
     </script>
 </html>
 

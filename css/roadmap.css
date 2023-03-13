@@ -58,3 +58,27 @@
 #blk-2{
    width: fit-content;
 }
+
+ /*Tablet view*/
+ @media screen and (max-width: 950px) and (min-width: 540px) {
+   .page-1{
+    margin: 56px 5.21% 116px 5.08%;;
+   }
+   .page-content-down{
+    gap: 10px;
+   }
+   .plan-box{
+    width: 32.36%;
+   }
+   
+      
+      
+   }
+
+
+   /*Mobile view*/
+@media screen and (max-width: 550px) and (min-width: 250px) {
+    .page-1{
+        margin: 0;
+    }
+}
