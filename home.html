@@ -19,7 +19,7 @@
             </div>
             <div class="nav-size nav-2" id="size-1">
                 <div class="nav-2-inner" id="click-btn">
-                <button class="nav-btn body-3" id="all-btn" onclick="toggleActive">All </button>
+                <button class="nav-btn body-3 active" id="all-btn" onclick="toggleActive">All </button>
                 <button class="nav-btn body-3" onclick="toggleActive">UI</button>
                 <button class="nav-btn body-3" onclick="toggleActive">UX</button>
                 <button class="nav-btn body-3" onclick="toggleActive">Enhancement</button>
@@ -67,9 +67,9 @@
                             <a href="roadmap.html" class="body-3" id="view-text">View</a>
                         </div>
                         <div>
-                        <div class="nav-btm-inner list marg"><p class="round" id="plan"></p><p id="spc">Planned</p><p class="flex-end blk-start" id="len-plan"></p></div>
-                        <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start" id="len-prog">3</p></div>
-                        <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start" id="len-live">1</p></div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="plan"></p><p id="spc">Planned</p><p class="flex-end blk-start" id="len-plan1"></p></div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start" id="len-prog1"></p></div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start" id="len-live1"></p></div>
                     </div>
                     </div>
                 </div>
@@ -77,14 +77,24 @@
             <div class="header">
                 <img class="sugg-img head-marg" src="assets/suggestions/icon-suggestions.svg">
                 <p class="sugg head-marg" id="sugg-no"></p>
-                <p class="sort head-marg"><select id="sort1">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn" id="sort1"><span class="body-2 white-text">Sort by :</span><span class="h4 white-text" id="display-sel">Most Upvotes</span> </button>
+                    <div id="myDropdown" class="dropdown-content " >
+                      <a href="#" class="sort-acc" value="most-upvotes" class="light-text">Most Upvotes</a>
+                      <a href="#" class="sort-acc" value="least-upvotes" class="light-text">Least Upvotes</a>
+                      <a href="#" class="sort-acc" value="most-comments" class="light-text">Most Comments</a>
+                      <a href="#" class="sort-acc" value="least-comments" class="light-text">Least Comments</a>
+                    </div>
+                  </div>
+                <!-- <p class="sort head-marg"><select id="sort1">
                     <option value="most-upvotes">Most Upvotes</option>
                     <option value="least-upvotes">Least Upvotes</option>
                     <option value="most-comments">Most Comments</option>
                     <option value="least-comments">Least Comments</option>
     
-                </select><img class="arrow-down" src="assets/shared/icon-arrow-down.svg"></p>
-                <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end h4"><img class="arrow-plus" src="assets/shared/icon-plus.svg">Add Feedback</button>
+                </select> -->
+                <svg class="arrow-down" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
+                <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end h4"> + Add Feedback</button>
     
             </div>
             <div class="content" id="content1">  

@@ -5,6 +5,7 @@
     margin-right: auto;
     width: 37.5%;
     padding: 0.1px;
+    position: relative;
 }
 .plus-svg{
     width: 56px;
@@ -15,7 +16,7 @@
 }
 #back-img{
     position: absolute;
-    left: 440px;
+    left: 40px;
     top: 45px; 
 }
 body{
