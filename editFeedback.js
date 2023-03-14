@@ -56,10 +56,10 @@ function editDetails(prod){
         <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
         <input name="description" class="input-box-big" value="${prod.description}">
     </div>
-
+    <div class="bttn-div">
     <button class="del-btn h4">Delete</button>
     <button class="cancel-btn h4">Cancel</button>
-    <button class="save-changes-btn h4">Save Changes</button>
+    <button class="save-changes-btn h4">Save Changes</button></div>
     </form>`
    
     console.log(prod)

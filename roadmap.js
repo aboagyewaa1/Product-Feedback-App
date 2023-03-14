@@ -93,9 +93,9 @@ for(let i=0;i<planned.length;i++){
         <p class="road-rnd">${planned[i].upvotes}</p>
 
     </div>
-    <div  class="flex-end">
+    <div  class="flex-end row-1">
         <img class="comments-svg" src="assets/shared/icon-comments.svg">
-        <p>${planned[i].comments?planned[i].comments.length:0}</p>
+        <p class="comments-text">${planned[i].comments?planned[i].comments.length:0}</p>
 
     </div>
 

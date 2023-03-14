@@ -118,7 +118,7 @@
    flex-direction: column;
  }
 
- .replyTo{
+ #replyTo{
    display: inline-block;
    color: #AD1FEA;
  }
@@ -139,3 +139,24 @@
    
    
 }
+   /*Mobile view*/
+   @media screen and (max-width: 550px) and (min-width: 250px) {
+      .details-top{
+         width: 87.2%;
+      }
+      .details{
+         width: 87.2%;
+      }
+      .post-btn{
+         margin-left: 50%;
+      }
+      .details-comments{
+         padding: 20px;
+      }
+      .content-inner{
+         height: fit-content;
+      }
+      .boxy{
+         display: inline-block;
+      }
+   }

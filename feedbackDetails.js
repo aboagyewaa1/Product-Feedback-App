@@ -85,7 +85,7 @@ function displayDetails(prod) {
                         </div>
                         <div class="reply-content">
                             <p class="body-2 light-text "> 
-                            <p class="replyTo h4">@${prod.comments[i].replies[j].replyingTo}</p>
+                            <p class=" h4"><p id="replyTo">@${prod.comments[i].replies[j].replyingTo}</p></p>
                             ${prod.comments[i].replies[j].content}</p>
                             <div class='replyboxes' data-target='${prod.comments[i].id}' id="replybox"></div>
                         </div>

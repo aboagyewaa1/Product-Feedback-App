@@ -98,7 +98,33 @@ p{
     width: 70.31%;
     margin-top: 56px;
   }
- 
+
     
     
  }
+ 
+    /*Mobile view*/
+    @media screen and (max-width: 550px) and (min-width: 250px) {
+        #back-img{
+            left: 40px;
+           }
+           .top-2{
+            width: 85.32%;
+           }
+           .form{
+            width: 87.2%;
+           }
+           .btn-div{
+            flex-direction: column-reverse;
+            margin-left: 7.34%;
+            margin-right: 7.34%;
+            margin-bottom: 24px;
+            gap: 16px;
+           }
+           .cancel-btn{
+            width: 100%;
+           }
+           .add-btn{
+            width: 100%;
+           }
+    }

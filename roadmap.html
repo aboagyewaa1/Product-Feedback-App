@@ -12,16 +12,19 @@
         
     <div class="page-1">
         <div class="header">
-            <img class="arrow-left" src="assets/shared/icon-arrow-left.svg">
-            <a onclick="history.back()"class="h4 white-text">Go Back</a>
-            <p class="sugg head-marg" id="sugg-no">Roadmap</p>
+            <div class="road-header">
+            <div class="side-road">
+                <svg class="arrow-left" width="7" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L2 5l4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            <p onclick="history.back()"class="h4 white-text back-text">Go Back</p></div>
+            <div><p class="sugg head-marg h3" id="sugg-no">Roadmap</p></div>
+           </div>
             <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end">Add Feedback</button>
 
         </div>
         <nav class="nav-mobile">
-            <div class="nav-l" id="plan-div"><span>Planned</span></div>
-            <div class="nav-l"id="prog-div"><span>In-Progress</span></div>
-            <div class="nav-l" id="live-div"><span>Live</span></div>
+            <div class="nav-l" id="plan-div"><span class="body-3 dark-text mz">Planned</span></div>
+            <div class="nav-l"id="prog-div"><span class="body-3 dark-text">In-Progress</span></div>
+            <div class="nav-l" id="live-div"><span class="body-3 dark-text">Live</span></div>
 
         </nav>
         <div class="page-content" id="page-road">  
