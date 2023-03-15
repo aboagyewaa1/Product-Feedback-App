@@ -25,6 +25,10 @@ function displayDetails(prod) {
     const pageDetails = document.getElementById('details-title')
     const replyDiv = document.getElementById('replies')
     const myDetailsInner = document.createElement('div')
+   
+    
+    // var totalLength = prod.comments?.length + prod.comments.replies?.length 
+    
     myDetailsInner.className = 'content-inner'
     myDetailsInner.innerHTML = `
         <div class="inner-box-content">              
@@ -48,9 +52,16 @@ function displayDetails(prod) {
     pageDetails.append(myDetailsInner)
 
     const detailsComments = document.getElementById('details-comments')
+    let replyCount = 0;
     for (let i = 0; i < prod.comments.length; i++) {
+        
         const myCommentsInner = document.createElement('div')
         if (prod.comments[i].replies) {
+            var com = prod.comments?.length
+            var rep = prod.comments[i].replies?.length
+            console.log(com)
+            console.log(rep)
+
             myCommentsInner.innerHTML = `
                 <div class="details-comments">
                     <div class="profile" id="myProfile">
@@ -94,6 +105,8 @@ function displayDetails(prod) {
                 
                 document.querySelector(`#replies-${prod.comments[i].id}`)?.append(myReply)
             }
+
+            replyCount += prod.comments[i].replies.length
         } else {
             myCommentsInner.innerHTML = `  
                 <div id='comments-${prod.comments[i].id}' class="details-comments">
@@ -113,7 +126,10 @@ function displayDetails(prod) {
             `
             detailsComments.append(myCommentsInner)
         }
+
     }
+    let totalCount = prod.comments.length + replyCount
+    document.getElementById('tot-len').innerHTML=`${totalCount} comments`
 
     // console.log(detailsComments)
 

@@ -118,13 +118,22 @@
     margin-top: 20px;
     padding-bottom: 16px; 
     border-bottom: 1px solid rgb(58,67,116,.4);  
+    text-align: center;
 }
-
+.opace{
+    opacity: 0.4;
+}
     .page-content{
         margin: 24px;
     }
-    #plan-div:active{
+    .planD{
         border-bottom: #F49F85 5px solid;
+    }
+    .progD{
+        border-bottom: #AD1FEA 5px solid;
+    }
+    .liveD{
+        border-bottom: #62BCFA 5px solid;
     }
     #sugg-no{
         display: block;

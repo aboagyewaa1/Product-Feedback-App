@@ -107,7 +107,6 @@ body{
 
 #view-text{
     margin-left: auto;
-    color: #4661E6;
     text-decoration: underline;
     /* margin-top: 20px; */
 }
@@ -328,8 +327,15 @@ a{
     background-color: #cfd7ff;
 }
 
-.upvotes:hover{
+.upvotes:not(.active2):hover{
     background-color:#cfd7ff ;
+}
+
+.up-marg {
+    stroke: #4661E6;
+}
+.upvotes.active2 > .up-marg{
+    stroke: white;
 }
 .comments-svg{
     width: 18px;
@@ -350,9 +356,26 @@ a{
     border: 1px solid #4661E6;
     
 }
+.dropbtn:hover{
+    opacity: 0.75;
+}
 .opacity-view{
     opacity: 0.25;
 }
+.add-btn:hover{
+    background-color: #c75af6;
+}
+.view-op{
+    color: #4661E6;
+}
+.view-op:hover{
+    color: #8397f8;
+
+}
+.marg-0:hover{
+    color: #4661E6;
+}
+
 /* customized dropdpwn */
 /* Dropdown Button */
 .dropbtn {
@@ -410,7 +433,10 @@ a{
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
 
-
+.active2{
+    background-color: #4661E6;
+    color: white;
+}
 
 
 /*Tablet view*/

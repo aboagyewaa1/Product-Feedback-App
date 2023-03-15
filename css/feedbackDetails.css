@@ -1,4 +1,6 @@
-
+body{
+   padding-top: 80px;
+}
 .details{
     width: 50.69%;
     background-color: white;
@@ -13,6 +15,7 @@
     border-style: none;
     border-radius:8px;
     padding: 8px 15px;
+    margin-bottom: 20px;
   
     
  }
@@ -96,12 +99,17 @@
  #reply-box{
    display: none;
  }
+ .edit-btn :hover{
+   background-color: #7c91f9;
+
+ }
  
  .reply-input{
    width: 70.61%;
    height: 80px;
    background-color: #F7F8FD;
    border-radius: 5px;
+   border: 1px solid #4661e6;
  }
 
  .reply-btn{
@@ -126,6 +134,20 @@
  .replies {
    margin-top: 2.5rem;
  }
+
+ #edit-back{
+   display: inline-block;
+   margin-top: 5px;
+   height: 10px;
+ }
+.reply:hover{
+   text-decoration: underline;
+
+}
+.post-btn:hover{
+   background-color: #c75af6;
+}
+
 
  /*Tablet view*/
 @media screen and (max-width: 950px) and (min-width: 540px) {

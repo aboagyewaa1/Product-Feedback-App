@@ -13,35 +13,67 @@ const myNavs=document.querySelectorAll('.nav-l')
 for(const my of myNavs){
     my.addEventListener('click',()=>{
         const id1 = my.getAttribute('id')
-    //    id1.classList.remove('d-none')
+       my.classList.remove('d-none')
         if(id1 == 'plan-div') {
             document.getElementById('planned').classList.add('d-block')
-            document.getElementById('in-progress').classList.add('d-none')
             document.getElementById('in-progress').classList.remove('d-block')
+            document.getElementById('in-progress').classList.add('d-none')
             document.getElementById('live-1').classList.remove('d-block')
+
+            //border-bottom
+            document.getElementById('plan-div').classList.add('planD')
+            document.getElementById('prog-div').classList.remove('progD')
+            document.getElementById('live-div').classList.remove('livenD')
             //top
             document.getElementById('plan-top').classList.add('d-block')
             document.getElementById('prog-top').classList.remove('d-block')
+            document.getElementById('prog-top').classList.add('d-none')
             document.getElementById('live-top').classList.remove('d-block')
+
+            //opacity
+            document.getElementById('plan-div').classList.remove('opace')
+            document.getElementById('prog-div').classList.add('opace')
+            document.getElementById('live-div').classList.add('opace')
         }
         else if(id1 == 'prog-div'){
             document.getElementById('in-progress').classList.add('d-block')
             document.getElementById('planned').classList.remove('d-block')
             document.getElementById('live-1').classList.remove('d-block')
+              //border-bottom
+              document.getElementById('plan-div').classList.remove('planD')
+              document.getElementById('prog-div').classList.add('progD')
+            document.getElementById('live-div').classList.remove('liveD')
               //top
               document.getElementById('plan-top').classList.remove('d-block')
-              document.getElementById('prog-top').classList.remove('d-none')
+              document.getElementById('prog-top').classList.add('d-block')
               document.getElementById('live-top').classList.remove('d-block')
+
+                          //opacity
+            document.getElementById('plan-div').classList.add('opace')
+            document.getElementById('prog-div').classList.remove('opace')
+            document.getElementById('live-div').classList.add('opace')
           
         }
          else if(id1=='live-div') {
             document.getElementById('live-1').classList.add('d-block')
             document.getElementById('planned').classList.remove('d-block')
+            document.getElementById('in-progress').classList.add('d-none')
             document.getElementById('in-progress').classList.remove('d-block')
+                //border-bottom
+                document.getElementById('plan-div').classList.remove('planD')
+                document.getElementById('prog-div').classList.remove('progD')
+              document.getElementById('live-div').classList.add('liveD')
+
                           //top
            document.getElementById('plan-top').classList.remove('d-block')
          document.getElementById('prog-top').classList.remove('d-block')
+         document.getElementById('prog-top').classList.add('d-none')
         document.getElementById('live-top').classList.add('d-block')
+
+                    //opacity
+                    document.getElementById('plan-div').classList.add('opace')
+                    document.getElementById('prog-div').classList.add('opace')
+                    document.getElementById('live-div').classList.remove('opace')
           
         }
     })
