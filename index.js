@@ -260,37 +260,7 @@ function filterTag(e){
     }
 
 
-        // document.getElementById('sort1').addEventListener('change',()=>{
-        //     switch(document.getElementById('sort1').value){
-        //         case 'most-upvotes':
-        //             displayData([...prod].sort((prev, next) => {
-        //                 return prev.upvotes > next.upvotes ? -1 : 1;
-        //             }))
-        //             break;
 
-        //         case 'least-upvotes':
-        //             displayData([...prod].sort((prev, next) => {
-        //                 return prev.upvotes < next.upvotes ? -1 : 1;
-        //             }))
-        //             break;
-        //         case 'most-comments':
-        //             displayData([...prod].sort((prev, next) => {
-        //                 return (prev.comments?.length ?? 0) > (next.comments?.length ?? 0) ? -1 : 1;
-        //             }))
-        //             break;
-        //         case 'least-comments':
-        //             displayData([...prod].sort((prev, next) => {
-        //                 return (prev.comments?.length ?? 0) < (next.comments?.length ?? 0) ? -1 : 1;
-        //             }))
-        //             break;
-        //     }
-        // })
-
-
-
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -307,4 +277,65 @@ function myFunction() {
         }
       }
     }
+  }
+
+
+
+ //New Feedback drop down
+function mySelect() {
+    document.getElementById("catSel1").classList.toggle("show1");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    // if (!event.target.matches('.dropbtn1')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content1");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show1')) {
+          openDropdown.classList.remove('show1');
+        }
+        else{
+            openDropdown.classList.add('show1')
+        }
+    //   }
+    }
+  }
+
+
+  const selN = document.querySelectorAll('.sel-cat')
+  for (const s of selN) {
+      s.addEventListener('click', () => {
+          let grabC = s.getAttribute('value')
+          let myCategory = document.getElementById('form-cat')
+          let Cat = s.innerHTML
+          let cat_sel = document.getElementById('catSel1')
+          switch(grabC){
+              case 'feature':
+                  cat_sel.innerHTML= Cat
+                  myCategory.setAttribute('value',grabC)
+                  console.log(grabC)
+                 
+                  break;
+            case 'ui':
+                cat_sel.innerHTML= Cat
+               
+                  break;
+              case 'ux':
+                cat_sel.innerHTML= Cat
+              
+                  break;
+              case 'enhancement':
+                cat_sel.innerHTML= Cat
+               
+                  break;
+             case 'bug':
+                cat_sel.innerHTML= Cat
+               
+                  break;
+
+          }
+       
+      })
   }

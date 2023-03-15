@@ -24,13 +24,24 @@
         <div class="form-div">
             <p class="h4 dark-text">Category</p>
             <p class="body-2 light-text ">Choose a category for your feedback</p>
-            <select name="category" class="svg-arrow input-box">
+            <div class="dropdown1">
+               <p onclick="mySelect()" class="dropbtn1 h4 input-box svg-arrow" id="catSel1" >Feature</p>
+                <div id="myDropdown1" class="dropdown-content1 show1 " >
+                  <a href="#" class="sel-cat light-text " value="feature" >Feature</a>
+                  <a href="#" class="sel-cat light-text" value="ui" >UI</a>
+                  <a href="#" class="sel-cat light-text" value="ux" >UX</a>
+                  <a href="#" class="sel-cat light-text" value="enhancement" >Enhancement</a>
+                  <a href="#" class="sel-cat light-text" value="bug" >Bug</a>
+                </div>
+              </div>
+              <input type="hidden" name="category" id="form-cat">
+            <!-- <select name="category" class="svg-arrow input-box">
                 <option>Feature</option>
                 <option>UI</option>
                 <option>UX</option>
                 <option>Enhancement</option>
                 <option>Bug</option>
-            </select>
+            </select> -->
         </div>
         <div class="form-div last-form-div">
             <p class="h4 dark-text">Feedback Detail</p>
