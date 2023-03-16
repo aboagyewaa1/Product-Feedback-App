@@ -89,7 +89,7 @@ function displayData(prod) {
         <div class="inner-box-content">              
          <div class="upvotes ${ids.includes(`${prod[i].id}`) ? 'active2' : ''}" data-id="${prod[i].id}">
             <svg class="up-marg"  width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
-            <p class="up-text h4 " id="up-1">${
+            <p class="up-text h4 dark-text" id="up-1">${
               prod[i].upvotes ? prod[i].upvotes : 0
             }</p>
         </div>
@@ -102,7 +102,7 @@ function displayData(prod) {
         </div>
         <div class="comments flex-end">
             <img class="comments-svg" src="assets/shared/icon-comments.svg">
-             <p>${prod[i].comments ? prod[i].comments.length : 0}</p>
+             <p class="p-tag">${prod[i].comments ? prod[i].comments.length : 0}</p>
             </div>
         </div>`;
       // console.log(prod[i].comments?comments.length:0)

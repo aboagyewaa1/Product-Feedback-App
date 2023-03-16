@@ -23,6 +23,7 @@ function editDetails(prod){
     const formDetails = document.getElementById('formA')
     formDetails.innerHTML=`
     <form class="edit" id="edit">
+    
     <p class="h1 form-title">Editing '${prod.title}'</p>
     <div class="form-div">
         <p class="h4 dark-text">Feedback Title</p>
@@ -33,14 +34,14 @@ function editDetails(prod){
     <div class="form-div">
         <p class="h4 dark-text">Category</p>
         <p class="body-2 light-text ">Choose a category for your feedback</p>
-        <div class="dropdown1">
-        <p  class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1" >Feature<svg class="myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
-         <div id="myDropdown2" class="dropdown-content2 show2 " >
-           <a href="#" class="sel-cat light-text " value="feature" >Feature</a>
-           <a href="#" class="sel-cat light-text" value="ui" >UI</a>
-           <a href="#" class="sel-cat light-text" value="ux" >UX</a>
-           <a href="#" class="sel-cat light-text" value="enhancement" >Enhancement</a>
-           <a href="#" class="sel-cat light-text" value="bug" >Bug</a>
+        <div class="dropdown1" id="xyz">
+        <p  class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1" >${prod.category}<svg class="myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
+         <div id="myDropdown2" class="dropdown-content2  " >
+           <a  class="sel-cat light-text " value="feature">Feature</a>
+           <a  class="sel-cat light-text" value="ui">UI</a>
+           <a  class="sel-cat light-text" value="ux">UX</a>
+           <a  class="sel-cat light-text" value="enhancement">Enhancement</a>
+           <a  class="sel-cat light-text" value="bug">Bug</a>
          </div>
        </div>
        <input type="hidden" name="category" id="form-cat1">
@@ -50,7 +51,7 @@ function editDetails(prod){
         <p class="h4 dark-text">Update Status</p>
         <p class="body-2 light-text ">Change Feedback state</p>
         <div class="dropdown1" id="abc">
-        <p  class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel2" >Suggestion<svg class="myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
+        <p  class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel2" >${prod.status}<svg class="myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
          <div id="myDropdown1" class="dropdown-content1 " >
            <a  class="sel-stat light-text " value="suggestion">Suggestion</a>
            <a  class="sel-stat light-text" value="planned">Planned</a>
@@ -58,7 +59,7 @@ function editDetails(prod){
            <a  class="sel-stat light-text" value="live">Live</a>
          </div>
        </div>
-       <input type="hidden" name="state" id="form-state">
+       <input type="hidden" name="status" id="form-state">
 
     
     </div>
@@ -92,6 +93,7 @@ function editDetails(prod){
 
 const state1 =document.querySelectorAll('.sel-stat')
 const stValue = document.getElementById('catSel2')
+const editStatus = document.getElementById('form-state')
 
 for(const stat of state1){
   stat.addEventListener('click',()=>{
@@ -114,31 +116,77 @@ for(const stat of state1){
 
 
     }
+    editStatus.setAttribute("value", v);
+    var cust = document.getElementsByClassName("dropdown-content1")
+    for(const cus of cust){
+      if(cus.classList.contains("show1")){
+        cus.classList.remove("show1")
+      } else{
+        cus.classList.add("show1")
+      }
+    }
+
+  })
+}
+
+document.getElementById('xyz').addEventListener('click',()=>{
+  document.getElementById('catSel1').classList.add('blue-border')
+  // console.log('hi')
+  var cust1 = document.getElementsByClassName("dropdown-content2")
+  for(const cus1 of cust1){
+    if(cus1.classList.contains("show2")){
+      cus1.classList.remove("show2")
+    } else{
+      cus1.classList.add("show2")
+    }
+  }
+
+ })
+
+const state2 =document.querySelectorAll('.sel-cat')
+const stValue1 = document.getElementById('catSel1')
+let editCat = document.getElementById('form-cat1')
+
+for(const stat1 of state2){
+  stat1.addEventListener('click',()=>{
+    let m= stat1.getAttribute("value")
+    let n = stat1.innerHTML
+    switch(m){
+      case 'feature':
+      stValue1.innerHTML=n
+     
+      break;
+      case 'ui':
+        stValue1.innerHTML=n
+        break;
+     case 'ux':
+        stValue1.innerHTML=n
+        break;
+      case 'enhancement':
+         stValue1.innerHTML=n
+          break;
+      case 'bug':
+        stValue1.innerHTML=n
+          break;
+
+
+    }
+    editCat.setAttribute("value", m);
+
+    var cust1 = document.getElementsByClassName("dropdown-content2")
+    for(const cus1 of cust1){
+      if(cus1.classList.contains("show2")){
+        cus1.classList.remove("show2")
+      } else{
+        cus1.classList.add("show2")
+      }
+    }
 
   })
 }
      
        
-  //   const $select = document.querySelector('#input-cat');
-  // const $options = Array.from($select.options);
 
-
-  // for(let i =0;i<$options.length;i++){
-  //   if($options[i].value===prod.category){
-  //       $options[i].selected=true;
-  //   }
-
-  // }
-  // const $select1 = document.querySelector('#input-state');
-  // const $options1 = Array.from($select1.options);
-
-
-  // for(let i =0;i<$options1.length;i++){
-  //   if($options1[i].value===prod.status){
-  //       $options1[i].selected=true;
-  //   }
-
-  // }
   const formEd = document.querySelector('#edit');
 
   formEd.addEventListener('submit', editFeedback)
@@ -164,6 +212,9 @@ function editFeedback(e){
     },
   body: JSON.stringify(dataEdit
   )
-})
+ })
+
+ .then(()=>location.reload())
+
 
 }

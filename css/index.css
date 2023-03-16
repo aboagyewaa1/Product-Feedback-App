@@ -232,7 +232,8 @@ a{
     margin: 28px 3.88%;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
+    flex-grow: 1;
 }
 .upvotes{
     background-color:#F2F4FF;
@@ -321,6 +322,7 @@ a{
     flex-direction: row;
     height: fit-content;
     width: max-content;
+    margin-top: 10px;
    
 }
 .nav-btn:not(.active):hover{
@@ -437,6 +439,9 @@ a{
     background-color: #4661E6;
     color: white;
 }
+.p-tag{
+    margin-top: 10px;
+}
 
 
 /*Tablet view*/
@@ -467,6 +472,9 @@ a{
 
 /*Mobile view*/
 @media screen and (max-width: 550px) and (min-width: 250px) {
+    .content{
+        margin: 6%;
+    }
     .main-page{
         flex-direction: column;
         margin: 0;
@@ -557,16 +565,46 @@ a{
       }
 
       .content-inner{
-        flex-direction: column;
-        height: 200px;
+        display: grid;
+        
+        
       }
       .inner-box-content{
-        flex-direction: column;
+        display: grid;
+        grid-template-areas: 
+        'a a a a'
+        's s p p';
+        margin: 7.34%;
+      }
+      .upvotes{
+        display: grid;
+        grid-template-areas: 
+        'y y z z';
+        grid-area: s;
+        margin-left: 5.26%;
+        width: fit-content;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .comments{
+        /* display: grid;
+        grid-template-areas: 
+        'y y z z'; */
+        grid-area: p;
+      }
+      .up-marg{
+        grid-area: y;
+        margin: 20px 5px 0px 15px;
+        
+      }
+      .up-text{
+        grid-area: z;
+        margin: 16px 15px 0px 0px;
       }
       .inner-box-content .upvotes{
         /* position: relative;
        top: 100px; */
-       display: inline-block;
+       /* display: inline-block; */
       
       }
       .content-1{

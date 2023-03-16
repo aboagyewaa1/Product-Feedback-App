@@ -118,15 +118,15 @@ for(let i=0;i<planned.length;i++){
 <p class="h3 dark-text">${planned[i].title}</p>
 <p class="body-1 light-text">${planned[i].description}</p>
 
-<p class="nav-btn body-3">${planned[i].category}</p>
+<p class="nav-btn body-3 tag-1">${planned[i].category}</p>
 <div class="last-row">
-    <div>
-        <img src="assets/shared/icon-arrow-up.svg">
-        <p class="road-rnd">${planned[i].upvotes}</p>
+    <div class="upvotes-1">
+        <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
+        <p class="up-text-1">${planned[i].upvotes}</p>
 
     </div>
-    <div  class="flex-end row-1">
-        <img class="comments-svg" src="assets/shared/icon-comments.svg">
+    <div  class="flex-end comments row-1">
+        <img class="comments-svg-1" src="assets/shared/icon-comments.svg">
         <p class="comments-text">${planned[i].comments?planned[i].comments.length:0}</p>
 
     </div>
@@ -151,16 +151,16 @@ for(let i=0;i<live.length;i++){
 <p class="h3 dark-text">${live[i].title}</p>
 <p class="body-1 light-text">${live[i].description}</p>
 
-<p class="nav-btn body-3">${live[i].category}</p>
+<p class="nav-btn body-3 tag-1">${live[i].category}</p>
 <div class="last-row">
-    <div>
-        <img src="assets/shared/icon-arrow-up.svg">
-        <p class="road-rnd">${live[i].upvotes}</p>
+    <div class="upvotes-1">
+        <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
+        <p class="up-text-1">${live[i].upvotes}</p>
 
     </div>
-    <div  class="flex-end">
-        <img class="comments-svg" src="assets/shared/icon-comments.svg">
-        <p>${live[i].comments?live[i].comments.length:0}</p>
+    <div  class="flex-end comments">
+        <img class="comments-svg-1" src="assets/shared/icon-comments.svg">
+        <p class="comments-text">${live[i].comments?live[i].comments.length:0}</p>
 
     </div>
 
@@ -183,16 +183,16 @@ for(let i=0;i<progress.length;i++){
 <p class="h3 dark-text">${progress[i].title}</p>
 <p class="body-1 light-text">${progress[i].description}</p>
 
-<p class="nav-btn body-3">${progress[i].category}</p>
+<p class="nav-btn body-3 tag-1">${progress[i].category}</p>
 <div class="last-row">
-    <div>
-        <img  class="svg"src="assets/shared/icon-arrow-up.svg">
-        <p class="road-rnd">${progress[i].upvotes}</p>
+    <div class="upvotes-1">
+        <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
+        <p class="up-text-1">${progress[i].upvotes}</p>
 
     </div>
-    <div  class="flex-end">
-        <img class="comments-svg" id="#blk-2" src="assets/shared/icon-comments.svg">
-        <p class="" id="#blk-2">${progress[i].comments?progress[i].comments.length:0}</p>
+    <div  class="flex-end comments">
+        <img class="comments-svg-1" id="#blk-2" src="assets/shared/icon-comments.svg">
+        <p class="end-text" id="#blk-2">${progress[i].comments?progress[i].comments.length:0}</p>
 
     </div>
 
