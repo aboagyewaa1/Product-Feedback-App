@@ -43,9 +43,9 @@ function displayDetails(prod) {
                 <p class="marg-0 tag body-3">${prod.category}</p>
 
             </div>
-            <div class="comments flex-end">
+            <div class="comments flex-end" id="come">
                 <img class="comments-svg" src="assets/shared/icon-comments.svg">
-                <p>${prod.comments ? prod.comments.length : 0}</p>
+                <p class="marg-top">${prod.comments ? prod.comments.length : 0}</p>
             </div>
         </div>
     `

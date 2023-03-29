@@ -122,12 +122,12 @@ for(let i=0;i<planned.length;i++){
 <div class="last-row">
     <div class="upvotes-1">
         <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-        <p class="up-text-1">${planned[i].upvotes}</p>
+        <p class="up-text-1 body-3 dark-text">${planned[i].upvotes}</p>
 
     </div>
     <div  class="flex-end comments row-1">
         <img class="comments-svg-1" src="assets/shared/icon-comments.svg">
-        <p class="comments-text">${planned[i].comments?planned[i].comments.length:0}</p>
+        <p class="end-text body-1 dark-text">${planned[i].comments?planned[i].comments.length:0}</p>
 
     </div>
 
@@ -155,12 +155,12 @@ for(let i=0;i<live.length;i++){
 <div class="last-row">
     <div class="upvotes-1">
         <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-        <p class="up-text-1">${live[i].upvotes}</p>
+        <p class="up-text-1 body-3 dark-text">${live[i].upvotes}</p>
 
     </div>
     <div  class="flex-end comments">
         <img class="comments-svg-1" src="assets/shared/icon-comments.svg">
-        <p class="comments-text">${live[i].comments?live[i].comments.length:0}</p>
+        <p class="end-text body-1 dark-text">${live[i].comments?live[i].comments.length:0}</p>
 
     </div>
 
@@ -187,12 +187,12 @@ for(let i=0;i<progress.length;i++){
 <div class="last-row">
     <div class="upvotes-1">
         <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-        <p class="up-text-1">${progress[i].upvotes}</p>
+        <p class="up-text-1 body-3 dark-text">${progress[i].upvotes}</p>
 
     </div>
     <div  class="flex-end comments">
-        <img class="comments-svg-1" id="#blk-2" src="assets/shared/icon-comments.svg">
-        <p class="end-text" id="#blk-2">${progress[i].comments?progress[i].comments.length:0}</p>
+        <img class="comments-svg-1"  src="assets/shared/icon-comments.svg">
+        <p class="end-text body-1 dark-text" id="#blk-2">${progress[i].comments?progress[i].comments.length:0}</p>
 
     </div>
 

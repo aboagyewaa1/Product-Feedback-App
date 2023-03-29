@@ -1,5 +1,6 @@
 .plan-box{
     width: 31.53%;
+    margin-bottom: 32px;
    
 }
 .plan-box-1{
@@ -15,6 +16,13 @@
 #live-box{
     border-top: 5px solid #62BCFA;
 }
+.add-road{
+    margin-top:35px ;
+    margin-bottom: 34px;
+    margin-right: 3.6%;
+    color: #f2f4fe;
+}
+
 
 .page-1{
     margin: 78px 11.46%; 
@@ -38,7 +46,7 @@
 }
 
 .road-rnd{
-    margin: 0;
+    margin: 0 4% 0 0;
     margin-block-start: 0px;
     margin-block-end: 0;
     display: inline-block;
@@ -60,7 +68,7 @@
     'y y z z';
     grid-area: s;
     /* grid-area: m ; */
-    margin-left: 5.26%;
+    /* margin-left: 5.26%; */
     width: fit-content;
     text-align: center;
     margin-top: 10px;
@@ -72,6 +80,8 @@
   }
   .end-text{
    display: inline-block;
+   font-weight: 700;
+   margin-top: 2px;
   }
 
 .last-row{
@@ -93,7 +103,7 @@
     display: none;
 }
 .arrow-left{
-    margin-top: 3px;
+    margin-top: 5px;
 }
 .arrow-left path{
     stroke: white;
@@ -104,6 +114,29 @@
     margin-right: 8px;
     margin-top: 6px;
 }
+.side-road{
+    display: flex;
+   
+}
+.rd-text{
+    margin-top: 4px;
+    color: white;
+}
+
+#road-arrow{
+    margin-right: 14%;
+
+}
+.road-header{
+    margin-top: 26px;
+    margin-left: 2.8%;
+}
+.back-text:hover{
+    text-decoration: underline;
+}
+
+
+
 
 
  /*Tablet view*/

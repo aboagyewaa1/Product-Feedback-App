@@ -15,7 +15,7 @@
     <p  onclick="history.back()" class="go-back h4 light-text">Go Back</p></div>
     <form class="form" id="myForm">
         <img  id="back-img" src="assets/shared/icon-new-feedback.svg">
-        <p class="h1 form-title">Create New Feedback</p>
+        <p class="h1 form-title" id="new-form">Create New Feedback</p>
         <div class="form-div">
             <p class="h4 dark-text">Feedback Title</p>
             <p class="body-2 light-text">Add a short,descriptive headline</p>
@@ -25,8 +25,11 @@
             <p class="h4 dark-text">Category</p>
             <p class="body-2 light-text ">Choose a category for your feedback</p>
             <div class="dropdown1">
-               <p onclick="mySelect()" class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1" >Feature<svg class="myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
-                <div id="myDropdown1" class="dropdown-content1 " >
+               <p onclick="mySelect()" class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1" >Feature
+                <svg class="myArrow noShow show " width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+                <svg class="noShow myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            </p>
+                <div id="myDropdown1" class="dropdown-content3 " >
                   <a href="#" class="sel-cat light-text " value="feature" >Feature</a>
                   <a href="#" class="sel-cat light-text" value="ui" >UI</a>
                   <a href="#" class="sel-cat light-text" value="ux" >UX</a>

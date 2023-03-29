@@ -37,6 +37,16 @@ body{
     margin-left: 15px;
     display: inline-block;
  }
+ .go-back:hover{
+   text-decoration: underline;
+ }
+ .marg-top{
+   margin-top: 14px;
+ }
+
+ #come{
+   margin-left: 9%;
+ }
 
 .profile-pic{
     border-radius: 50%;
@@ -102,6 +112,10 @@ body{
  .edit-btn :hover{
    background-color: #7c91f9;
 
+ }
+ 
+ #char-length{
+   color:#647196;
  }
  
  .reply-input{

@@ -77,7 +77,7 @@ function displayData(prod) {
 
   
   myAdd.innerHTML = "";
-  if (prod.length > 1) {
+  if (prod.length > 0) {
     const ids = JSON.parse(localStorage.getItem('votes') ?? '[]')
     document.getElementById("view-text").classList.remove("opacity-view");
     document.getElementById("view-text").setAttribute("href", "roadmap.html");
@@ -89,7 +89,7 @@ function displayData(prod) {
         <div class="inner-box-content">              
          <div class="upvotes ${ids.includes(`${prod[i].id}`) ? 'active2' : ''}" data-id="${prod[i].id}">
             <svg class="up-marg"  width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
-            <p class="up-text h4 dark-text" id="up-1">${
+            <p class="up-text h4 " id="up-1">${
               prod[i].upvotes ? prod[i].upvotes : 0
             }</p>
         </div>
@@ -102,7 +102,7 @@ function displayData(prod) {
         </div>
         <div class="comments flex-end">
             <img class="comments-svg" src="assets/shared/icon-comments.svg">
-             <p class="p-tag">${prod[i].comments ? prod[i].comments.length : 0}</p>
+             <p class="p-tag h4">${prod[i].comments ? prod[i].comments.length : 0}</p>
             </div>
         </div>`;
       // console.log(prod[i].comments?comments.length:0)
@@ -126,6 +126,7 @@ function displayData(prod) {
   }
 
   const up = document.querySelectorAll(".upvotes");
+  const uptext = document.querySelectorAll('.up-text')
   for (const u of up) {
     u.addEventListener("click", () => {
       const id = u.dataset.id;
@@ -133,6 +134,7 @@ function displayData(prod) {
 
       const ids = JSON.parse(localStorage.getItem('votes') ?? '[]')
       if (!u.classList.contains("active2")) {
+       
         upvote += 1;
         u.classList.add("active2");
 
@@ -231,12 +233,29 @@ for (const icon of icons) {
 const sorty = document.querySelectorAll(".sort-acc");
 for (const sel of sorty) {
   sel.addEventListener("click", () => {
+    
+    for(const arrow of document.getElementsByClassName('arrow-down')) {
+      arrow.classList.toggle('show')
+    }
+
+    const m1 = document.getElementById('most1')
+    const l1 = document.getElementById('least1')
+    const m2 = document.getElementById('most2')
+    const l2 = document.getElementById('least2')
+
     let grab = sel.getAttribute("value");
     let innGrab = sel.innerHTML;
     let dis_sel = document.getElementById("display-sel");
+
+    const shown = document.querySelector('#myDropdown a svg.show-1');
+
     switch (grab) {
       case "most-upvotes":
         dis_sel.innerHTML = innGrab;
+
+        shown.classList.remove('show-1')
+        m1.querySelector('svg').classList.add('show-1');
+
         displayData(
           [...prod].sort((prev, next) => {
             return prev.upvotes > next.upvotes ? -1 : 1;
@@ -245,6 +264,10 @@ for (const sel of sorty) {
         break;
       case "least-upvotes":
         dis_sel.innerHTML = innGrab;
+
+        shown.classList.remove('show-1')
+        l1.querySelector('svg').classList.add('show-1');
+
         displayData(
           [...prod].sort((prev, next) => {
             return prev.upvotes < next.upvotes ? -1 : 1;
@@ -253,6 +276,10 @@ for (const sel of sorty) {
         break;
       case "most-comments":
         dis_sel.innerHTML = innGrab;
+
+        shown.classList.remove('show-1')
+        m2.querySelector('svg').classList.add('show-1');
+
         displayData(
           [...prod].sort((prev, next) => {
             return (prev.comments?.length ?? 0) > (next.comments?.length ?? 0)
@@ -263,6 +290,10 @@ for (const sel of sorty) {
         break;
       case "least-comments":
         dis_sel.innerHTML = innGrab;
+
+        shown.classList.remove('show-1')
+        l2.querySelector('svg').classList.add('show-1');
+
         displayData(
           [...prod].sort((prev, next) => {
             return (prev.comments?.length ?? 0) < (next.comments?.length ?? 0)
@@ -277,12 +308,22 @@ for (const sel of sorty) {
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
+  for(const arrow of document.getElementsByClassName('arrow-down')) {
+    arrow.classList.toggle('show')
+  } 
 }
+
+
+
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
+    document.getElementById('arr-up').classList.remove("show")
+  
+
+
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];

@@ -4,8 +4,12 @@
     margin-left: auto;
     margin-right: auto;
     width: 37.5%;
-    padding: 0.1px;
+    
+    
     position: relative;
+}
+#myForm{
+  padding-bottom: 0.1px;
 }
 .plus-svg{
     width: 56px;
@@ -14,11 +18,18 @@
     left: 440px;
     top: -1px;   
 }
+.edit{
+  padding-bottom: 40px;
+  padding-top: 10px;
+}
 #back-img{
     position: absolute;
     left: 40px;
     transform: translateY(-50%);
    
+}
+#new-form{
+  padding-top: 40px;
 }
 body{
     margin: auto;
@@ -70,8 +81,10 @@ p{
     border-style: none;
     height: 44px;
     width: 93px;
-    margin-right: 16px;
-    
+    margin-right: 16px;    
+}
+.cancel-btn:hover{
+  background-color: #656EA3;
 }
 .last-form-div{
     margin-bottom: 32px;
@@ -135,6 +148,16 @@ p{
     margin-left: 85%;
     margin-top: auto;
   }
+  .dropdown-content3{
+    display: none;
+    position: absolute;
+    /* top: 80px; */
+    background-color: white;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+  }
   
  
   
@@ -142,9 +165,17 @@ p{
   .dropdown-content1 a {
     padding: 12px 16px;
     text-decoration: none;
+    /* display: block; */
+    border-bottom: 1px solid rgba(151, 151, 151, .15);
+   
+  }
+  .dropdown-content3 a{
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
     border-bottom: 1px solid rgba(151, 151, 151, .15);
    
+
   }
   
   /* Change color of dropdown links on hover */

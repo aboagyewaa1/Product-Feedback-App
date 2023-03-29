@@ -15,13 +15,16 @@ formEl?.addEventListener("submit", (event) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then(()=>location.reload())
+  }).then(()=>history.back())
   
 });
 
 //New Feedback drop down
 function mySelect() {
   document.getElementById("catSel1").classList.toggle("show1");
+  for(const arr of document.getElementsByClassName('myArrow')) {
+    arr.classList.toggle('show')
+  }
 }
 
 // Close the dropdown menu if the user clicks outside of it
@@ -29,7 +32,7 @@ function mySelect() {
 var tyr = document.querySelectorAll(".dropbtn1");
 for (const ty of tyr) {
   ty.addEventListener("click", () => {
-    var dropdowns = document.getElementsByClassName("dropdown-content1");
+    var dropdowns = document.getElementsByClassName("dropdown-content3");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -75,7 +78,7 @@ for (const s of selN) {
     myCategory.setAttribute("value", grabC);
 
 
-    var dropdowns = document.getElementsByClassName("dropdown-content1");
+    var dropdowns = document.getElementsByClassName("dropdown-content3");
     var openDropdown = dropdowns[0];
     if (openDropdown.classList.contains("show1")) {
       openDropdown.classList.remove("show1");

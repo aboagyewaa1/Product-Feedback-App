@@ -76,17 +76,27 @@
             </div>
             <div class="header">
                 <img class="sugg-img head-marg" src="assets/suggestions/icon-suggestions.svg">
-                <p class="sugg head-marg" id="sugg-no"></p>
+                <p class="sugg head-marg h3" id="sugg-no"></p>
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn" id="sort1"><span class="body-2 white-text">Sort by :</span><span class="h4 white-text" id="display-sel">Most Upvotes</span> </button>
+                    <button onclick="myFunction()" class="dropbtn" id="sort1"><span class="body-2 white-text">Sort by : </span><span class="h4 white-text" id="display-sel">Most Upvotes</span> </button>
                     <div id="myDropdown" class="dropdown-content " >
-                      <a href="#" class="sort-acc" value="most-upvotes" class="light-text">Most Upvotes</a>
-                      <a href="#" class="sort-acc" value="least-upvotes" class="light-text">Least Upvotes</a>
-                      <a href="#" class="sort-acc" value="most-comments" class="light-text">Most Comments</a>
-                      <a href="#" class="sort-acc" value="least-comments" class="light-text">Least Comments</a>
+                      <a  class="sort-acc sort-bod light-text" id="most1" value="most-upvotes">Most Upvotes 
+                        <svg class='noShow show-1' xmlns="http://www.w3.org/2000/svg" id="m1s" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc sort-bod light-text" id="least1"  value="least-upvotes">Least Upvotes
+                        <svg class="noShow" id="l1s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc sort-bod light-text"  id="most2" value="most-comments">Most Comments
+                        <svg class="noShow" id="m2s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc  light-text" id="least2" value="least-comments" >Least Comments
+                        <svg class="noShow" id="l2s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
                     </div>
                   </div>
-                <svg class="arrow-down" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg></p>
+                <svg class="noShow arrow-down show" id="arr-down" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#ffffff" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+                <svg class="noShow arrow-down" width="10" height="7" id="arr-up" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke="#ffffff" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            </p>
                 <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end h4"> + Add Feedback</button>
     
             </div>
