@@ -39,6 +39,7 @@ body{
  }
  .go-back:hover{
    text-decoration: underline;
+   cursor: pointer;
  }
  .marg-top{
    margin-top: 14px;
@@ -95,6 +96,12 @@ body{
    height: 80px;
    background-color: #F7F8FD;
    border-style: none;
+ }
+ .btm-input:focus{
+   border: 1px solid #4661e6;
+ }
+ textarea:focus{
+   border: 1px solid #4661e6;
  }
  .post-btn{
    background-color:#AD1FEA ;
@@ -156,6 +163,7 @@ body{
  }
 .reply:hover{
    text-decoration: underline;
+   cursor: pointer;
 
 }
 .post-btn:hover{

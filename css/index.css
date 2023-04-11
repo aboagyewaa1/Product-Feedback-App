@@ -364,10 +364,7 @@ a{
 .sidebar-box,.sidebar{
     display: none;
 }
-.dropdown:active{
-    /* border: 1px solid #4661E6; */
-    
-}
+
 .dropbtn:hover{
     opacity: 0.75;
 }
@@ -376,6 +373,7 @@ a{
 }
 .add-btn:hover{
     background-color: #c75af6;
+    cursor: pointer;
 }
 .view-op{
     color: #4661E6;

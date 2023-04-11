@@ -25,16 +25,13 @@ function displayDetails(prod) {
     const pageDetails = document.getElementById('details-title')
     const replyDiv = document.getElementById('replies')
     const myDetailsInner = document.createElement('div')
-   
-    
-    // var totalLength = prod.comments?.length + prod.comments.replies?.length 
     
     myDetailsInner.className = 'content-inner'
     myDetailsInner.innerHTML = `
         <div class="inner-box-content">              
             <div class="upvotes">
                 <img class="up-marg" src="assets/shared/icon-arrow-up.svg">
-                <p class="up-text h4 dark-text">${prod.upvotes}</p>
+                <p class="up-text h4 dark-text">${prod.upvotes ? prod.upvotes : 0}</p>
             </div>
             <div class="content-mid">
             <a href="feedbackDetails.html?id=${prod.id}">
@@ -53,7 +50,9 @@ function displayDetails(prod) {
 
     const detailsComments = document.getElementById('details-comments')
     let replyCount = 0;
-    for (let i = 0; i < prod.comments.length; i++) {
+    // if(prod.comments.length>1){
+
+    for (let i = 0; i < prod.comments?.length; i++) {
         
         const myCommentsInner = document.createElement('div')
         if (prod.comments[i].replies) {
@@ -107,7 +106,9 @@ function displayDetails(prod) {
             }
 
             replyCount += prod.comments[i].replies.length
-        } else {
+           
+        }  
+        else {
             myCommentsInner.innerHTML = `  
                 <div id='comments-${prod.comments[i].id}' class="details-comments">
                     <div class="profile" id="myProfile">
@@ -129,7 +130,24 @@ function displayDetails(prod) {
 
     }
     let totalCount = prod.comments.length + replyCount
-    document.getElementById('tot-len').innerHTML=`${totalCount} comments`
+    document.getElementById('tot-len').innerHTML=`${totalCount} comments` 
+}
+//     if(prod.comments?.length>1 && replyCount > 1 ){
+//         let totalCount = prod.comments.length + replyCount
+//         document.getElementById('tot-len').innerHTML=`${totalCount} comments`
+
+//     }
+//     else if( prod.comments?.length>1 && replyCount<=0){
+//         document.getElementById('tot-len').innerHTML=`${prod.comments.length} comments`
+
+
+//     }
+//     else{
+     
+//         document.getElementById('tot-len').innerHTML=`0 comments`
+//     }
+    
+   
 
     // console.log(detailsComments)
 
@@ -137,8 +155,10 @@ function displayDetails(prod) {
     const logReply = document.getElementById('comments-content')
     // console.log(logReply)
     const replyClick = document.getElementsByClassName('reply')
+    console.log(replyClick)
     for (let i = 0; i < replyClick.length; i++) {
         replyClick[i].addEventListener('click', () => {
+            console.log('hi')
             const id = replyClick[i].dataset.id;
             const Rbox = document.querySelector(`[data-target="${id}"]`)
 
@@ -154,7 +174,9 @@ function displayDetails(prod) {
 
 
 
-}
+// }
+
+    
 
 
 
@@ -176,7 +198,7 @@ function AddComment() {
                 user: response
             }
 
-            let updated = prod.comments
+            let updated = prod.comments? prod.comments : []
             updated.push(comment)
 
 

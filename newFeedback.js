@@ -5,8 +5,19 @@ const formEl = document.querySelector(".form");
 formEl?.addEventListener("submit", (event) => {
   event.preventDefault();
 
+ const eText= document.getElementById('error-text')
+ const in1 = document.getElementById('in-1')
+if(in1.value.length < 1){
+  eText.innerHTML= `Can't be empty`
+
+}
+else if (in1.value.length >= 1){
+  eText.innerHTML= ``
+
+}
+
   const formData = new FormData(formEl);
-  // console.log(formData)
+  
 
   const data = Object.fromEntries(formData);
   fetch("https://product-feedback-api-hry7.onrender.com/productRequests", {
@@ -15,7 +26,8 @@ formEl?.addEventListener("submit", (event) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then(()=>history.back())
+  })
+  .then(()=>history.back())
   
 });
 

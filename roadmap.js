@@ -1,10 +1,12 @@
 let prod = []
 
-fetch('data/data.json')
+fetch("https://product-feedback-api-hry7.onrender.com/productRequests")
 .then(response=>response.json())
 .then(data=>{
-    prod = data.productRequests
+    prod = data
+    console.log(prod)
    filterStatus(prod)
+
 })
 
 
@@ -89,6 +91,7 @@ let live =[]
 planned = prod.filter(stat=>stat.status==='planned')
 progress = prod.filter(stat=>stat.status==='in-progress')
 live = prod.filter(stat=>stat.status==='live')
+console.log(prod)
 
 console.log(planned)
 console.log(progress)

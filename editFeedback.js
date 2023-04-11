@@ -31,7 +31,7 @@ function editDetails(prod) {
     <p class="h4 dark-text">Category</p>
     <p class="body-2 light-text ">Choose a category for your feedback</p>
     <div class="dropdown1" id="xyz">
-      <div class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1">
+      <div class="dropbtn1 body-2 input-box input svg-arrow1 dark-text" id="catSel1">
         <span>${prod.category}</span>
         <div class="svg-wrap">
           <svg class=" noShow dropArr show-1" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ function editDetails(prod) {
       </div>
 
       <div id="myDropdown2" class="dropdown-content2  ">
-        <a class="sel-cat light-text item" id="c1" value="feature">Feature
+        <a class="sel-cat light-text item " id="c1" value="feature">Feature
           <svg class="noShow cl ${
                 prod.category == "feature" ? "show-1" : "" }" xmlns="http://www.w3.org/2000/svg" width="13"
             height="11">
@@ -71,14 +71,14 @@ function editDetails(prod) {
         </a>
       </div>
     </div>
-    <input type="hidden" name="category" id="form-cat1">
+    <input type="hidden" name="category" id="form-cat1" value = ${prod.category}>
 
   </div>
   <div class="form-div">
     <p class="h4 dark-text">Update Status</p>
     <p class="body-2 light-text ">Change Feedback state</p>
     <div class="dropdown1" id="abc">
-      <div class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel2">
+      <div class="dropbtn1 body-2 input-box input svg-arrow1 dark-text" id="catSel2">
         <span>${prod.status}</span>
         <div class="svg-wrap">
           <svg class="myArrow noShow dropArr show-1" width="10" height="7" xmlns="http://www.w3.org/2000/svg">
@@ -112,15 +112,15 @@ function editDetails(prod) {
         </a>
       </div>
     </div>
-    <input type="hidden" name="status" id="form-state">
+    <input type="hidden" name="status" id="form-state" value = ${prod.status}>
 
   </div>
   <div class="form-div last-form-div">
     <p class="h4 dark-text">Feedback Detail</p>
     <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
-    <input name="description" class="input-box-big" value="${
-              prod.description
-            }">
+    <textarea name="description" class="input-box-big input" id="tt">${
+      prod.description
+    }</textarea>
   </div>
   <div class="bttn-div">
     <button class="del-btn h4">Delete</button>
@@ -150,6 +150,9 @@ function editDetails(prod) {
   const s2 = document.getElementById("s2");
   const s3 = document.getElementById("s3");
   const s4 = document.getElementById("s4");
+  // console.log(textarea.value)
+ const xx =  document.getElementById('tt')
+ console.log(xx.value)
 
   const state1 = document.querySelectorAll(".sel-stat");
   const stValue = document.getElementById("catSel2");
@@ -288,7 +291,7 @@ function editFeedback(e) {
   console.log(formEdit);
   // console.log(formEdit)
   const dataEdit = Object.fromEntries(formEdit);
-  // console.log(dataEdit)
+  console.log(dataEdit)
   fetch(
     `https://product-feedback-api-hry7.onrender.com/productRequests/${myId1}`,
     {
@@ -298,5 +301,6 @@ function editFeedback(e) {
       },
       body: JSON.stringify(dataEdit),
     }
-  ).then(() => location.reload());
+  )
+  .then(() => location.reload());
 }
