@@ -39,7 +39,8 @@ const suggNo = document.getElementById("sugg-no");
 const myAdd = document.getElementById("content1");
 //display data on page
 function displayData(prod) {
-  console.log(prod);
+  // window.location.reload()
+  // console.log(prod);
 
   let planned = [];
   let progress = [];
@@ -162,8 +163,17 @@ function displayData(prod) {
           }),
         }
       ).then((response) => {
-        localStorage.setItem('votes', JSON.stringify(ids))
-        window.location.reload();
+        fetch("https://product-feedback-api-hry7.onrender.com/productRequests")
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data)
+          prod = data;
+          // // console.log(prod)
+          // displayData(prod);
+          localStorage.setItem('votes', JSON.stringify(ids))
+          u.querySelector(".up-text").innerHTML = upvote
+        });
+        // window.location.reload();
       });
     });
   }
@@ -173,15 +183,14 @@ const navBtns = document.getElementsByClassName("nav-btn");
 
 for (let i = 0; i < navBtns.length; i++) {
   navBtns[i].addEventListener("click", filterTag);
-  //   console.log(navBtns[i].innerHTML)
+ 
 }
-// radiobutton = document.getElementById("all-btn");
-// radiobutton.clicked= true;
+
 
 function filterTag(e) {
   toggleActive(e);
   let value = e.target.innerHTML.trim();
-//   let result = value.toLowerCase();
+
   let newValue = [];
   if (value === "All") {
 
@@ -214,29 +223,15 @@ function filterTag(e) {
     );
     displayData(newValue);
   }
-}
-
-const icons = document.querySelectorAll(".hamburger");
-for (const icon of icons) {
-  icon.addEventListener("click", () => {
-    const id = icon.getAttribute("id");
-    icon.classList.remove("active1");
-    if (id == "icon-open") {
-      document.getElementById("icon-close").classList.add("active1");
-      document.getElementById("mobile-sidebar").classList.add("active1");
-    } else {
-      document.getElementById("icon-open").classList.add("active1");
-      document.getElementById("mobile-sidebar").classList.remove("active1");
-    }
-  });
-}
-const sorty = document.querySelectorAll(".sort-acc");
+  // console.log(newValue)
+  const sorty = document.querySelectorAll(".sort-acc");
 for (const sel of sorty) {
   sel.addEventListener("click", () => {
     
     for(const arrow of document.getElementsByClassName('arrow-down')) {
       arrow.classList.toggle('show')
     }
+    // console.log(newValue)
 
     const m1 = document.getElementById('most1')
     const l1 = document.getElementById('least1')
@@ -257,7 +252,7 @@ for (const sel of sorty) {
         m1.querySelector('svg').classList.add('show-1');
 
         displayData(
-          [...prod].sort((prev, next) => {
+          [...newValue].sort((prev, next) => {
             return prev.upvotes > next.upvotes ? -1 : 1;
           })
         );
@@ -269,7 +264,7 @@ for (const sel of sorty) {
         l1.querySelector('svg').classList.add('show-1');
 
         displayData(
-          [...prod].sort((prev, next) => {
+          [...newValue].sort((prev, next) => {
             return prev.upvotes < next.upvotes ? -1 : 1;
           })
         );
@@ -281,7 +276,7 @@ for (const sel of sorty) {
         m2.querySelector('svg').classList.add('show-1');
 
         displayData(
-          [...prod].sort((prev, next) => {
+          [...newValue].sort((prev, next) => {
             return (prev.comments?.length ?? 0) > (next.comments?.length ?? 0)
               ? -1
               : 1;
@@ -295,7 +290,7 @@ for (const sel of sorty) {
         l2.querySelector('svg').classList.add('show-1');
 
         displayData(
-          [...prod].sort((prev, next) => {
+          [...newValue].sort((prev, next) => {
             return (prev.comments?.length ?? 0) < (next.comments?.length ?? 0)
               ? -1
               : 1;
@@ -305,6 +300,97 @@ for (const sel of sorty) {
     }
   });
 }
+}
+
+const icons = document.querySelectorAll(".hamburger");
+for (const icon of icons) {
+  icon.addEventListener("click", () => {
+    const id = icon.getAttribute("id");
+    icon.classList.remove("active1");
+    if (id == "icon-open") {
+      document.getElementById("icon-close").classList.add("active1");
+      document.getElementById("mobile-sidebar").classList.add("active1");
+    } else {
+      document.getElementById("icon-open").classList.add("active1");
+      document.getElementById("mobile-sidebar").classList.remove("active1");
+    }
+  });
+}
+// const sorty = document.querySelectorAll(".sort-acc");
+// for (const sel of sorty) {
+//   sel.addEventListener("click", () => {
+    
+//     for(const arrow of document.getElementsByClassName('arrow-down')) {
+//       arrow.classList.toggle('show')
+//     }
+
+//     const m1 = document.getElementById('most1')
+//     const l1 = document.getElementById('least1')
+//     const m2 = document.getElementById('most2')
+//     const l2 = document.getElementById('least2')
+
+//     let grab = sel.getAttribute("value");
+//     let innGrab = sel.innerHTML;
+//     let dis_sel = document.getElementById("display-sel");
+
+//     const shown = document.querySelector('#myDropdown a svg.show-1');
+
+//     switch (grab) {
+//       case "most-upvotes":
+//         dis_sel.innerHTML = innGrab;
+
+//         shown.classList.remove('show-1')
+//         m1.querySelector('svg').classList.add('show-1');
+
+//         displayData(
+//           [...prod].sort((prev, next) => {
+//             return prev.upvotes > next.upvotes ? -1 : 1;
+//           })
+//         );
+//         break;
+//       case "least-upvotes":
+//         dis_sel.innerHTML = innGrab;
+
+//         shown.classList.remove('show-1')
+//         l1.querySelector('svg').classList.add('show-1');
+
+//         displayData(
+//           [...prod].sort((prev, next) => {
+//             return prev.upvotes < next.upvotes ? -1 : 1;
+//           })
+//         );
+//         break;
+//       case "most-comments":
+//         dis_sel.innerHTML = innGrab;
+
+//         shown.classList.remove('show-1')
+//         m2.querySelector('svg').classList.add('show-1');
+
+//         displayData(
+//           [...prod].sort((prev, next) => {
+//             return (prev.comments?.length ?? 0) > (next.comments?.length ?? 0)
+//               ? -1
+//               : 1;
+//           })
+//         );
+//         break;
+//       case "least-comments":
+//         dis_sel.innerHTML = innGrab;
+
+//         shown.classList.remove('show-1')
+//         l2.querySelector('svg').classList.add('show-1');
+
+//         displayData(
+//           [...prod].sort((prev, next) => {
+//             return (prev.comments?.length ?? 0) < (next.comments?.length ?? 0)
+//               ? -1
+//               : 1;
+//           })
+//         );
+//         break;
+//     }
+//   });
+// }
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");

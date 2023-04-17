@@ -96,6 +96,7 @@ body{
    height: 80px;
    background-color: #F7F8FD;
    border-style: none;
+   padding: 25px 16px;
  }
  .btm-input:focus{
    border: 1px solid #4661e6;
