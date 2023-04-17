@@ -13,27 +13,36 @@
     <div class="top-2">
     <img class="back-arrow" src="assets/shared/icon-arrow-left.svg">
     <p  onclick="history.back()" class="go-back h4 light-text">Go Back</p></div>
-    <img  id="back-img" src="assets/shared/icon-new-feedback.svg">
     <form class="form" id="myForm">
-        <p class="h1 form-title">Create New Feedback</p>
+        <img  id="back-img" src="assets/shared/icon-new-feedback.svg">
+        <p class="h1 form-title" id="new-form">Create New Feedback</p>
         <div class="form-div">
-            <p class="h4">Feedback Title</p>
+            <p class="h4 dark-text">Feedback Title</p>
             <p class="body-2 light-text">Add a short,descriptive headline</p>
-            <input name="title" class="input-box">
+            <input name="title" class="input-box"  id="in-1">
+            <p class="error" id="error-text"></p>
         </div>
         <div class="form-div">
-            <p class="h4">Category</p>
+            <p class="h4 dark-text">Category</p>
             <p class="body-2 light-text ">Choose a category for your feedback</p>
-            <select name="category" class="svg-arrow input-box">
-                <option>Feature</option>
-                <option>UI</option>
-                <option>UX</option>
-                <option>Enhancement</option>
-                <option>Bug</option>
-            </select>
+            <div class="dropdown1">
+               <p onclick="mySelect()" class="dropbtn1 body-2 input-box svg-arrow1 dark-text" id="catSel1" >Feature
+                <svg class="myArrow noShow show " width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+                <svg class="noShow myArrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            </p>
+                <div id="myDropdown1" class="dropdown-content3 " >
+                  <a href="#" class="sel-cat light-text " value="feature" >Feature</a>
+                  <a href="#" class="sel-cat light-text" value="ui" >UI</a>
+                  <a href="#" class="sel-cat light-text" value="ux" >UX</a>
+                  <a href="#" class="sel-cat light-text" value="enhancement" >Enhancement</a>
+                  <a href="#" class="sel-cat light-text" value="bug" >Bug</a>
+                </div>
+              </div>
+              <input type="hidden" name="category" id="form-cat">
+              <input type="hidden" name="status" id="form-stat" value="suggestion">
         </div>
         <div class="form-div last-form-div">
-            <p class="h4">Feedback Detail</p>
+            <p class="h4 dark-text">Feedback Detail</p>
             <p class="body-2 light-text ">Include any specific comments on what should be included,added etc</p>
             <input name="description" class="input-box-big">
         </div>
@@ -46,6 +55,6 @@
 
     
 
-    <script src="index.js"></script>
+    <script src="newFeedback.js"></script>
 </body>
 </html>

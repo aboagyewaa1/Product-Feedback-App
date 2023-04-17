@@ -1,4 +1,6 @@
-
+body{
+   padding-top: 80px;
+}
 .details{
     width: 50.69%;
     background-color: white;
@@ -13,6 +15,7 @@
     border-style: none;
     border-radius:8px;
     padding: 8px 15px;
+    margin-bottom: 20px;
   
     
  }
@@ -34,6 +37,17 @@
     margin-left: 15px;
     display: inline-block;
  }
+ .go-back:hover{
+   text-decoration: underline;
+   cursor: pointer;
+ }
+ .marg-top{
+   margin-top: 14px;
+ }
+
+ #come{
+   margin-left: 9%;
+ }
 
 .profile-pic{
     border-radius: 50%;
@@ -53,6 +67,7 @@
  .details-comments{
     background-color: white;
     padding: 24px 30px 48px;
+    margin-bottom: 20px;
  }
  .reply{
     color: #4661e6;
@@ -69,4 +84,124 @@
  .profs{
     margin-left: 32px;
  }
+
+ .add-comments{
+   max-width: 100%;
+   background-color: white;
+   padding: 24px 32px 32px 34px;
+ }
+
+ .btm-input{
+   width: 100%;
+   height: 80px;
+   background-color: #F7F8FD;
+   border-style: none;
+   padding: 25px 16px;
+ }
+ .btm-input:focus{
+   border: 1px solid #4661e6;
+ }
+ textarea:focus{
+   border: 1px solid #4661e6;
+ }
+ .post-btn{
+   background-color:#AD1FEA ;
+   margin-left: 71.5%;
+   width: fit-content;
+   border-radius: 10px;
+   border-style: none;
+   margin-top: 16px;
+   color: white;
+   padding: 15px;
+ }
+ #reply-box{
+   display: none;
+ }
+ .edit-btn :hover{
+   background-color: #7c91f9;
+
+ }
  
+ #char-length{
+   color:#647196;
+ }
+ 
+ .reply-input{
+   width: 70.61%;
+   height: 80px;
+   background-color: #F7F8FD;
+   border-radius: 5px;
+   border: 1px solid #4661e6;
+ }
+
+ .reply-btn{
+   padding: 10px 20px;
+   background-color: #AD1FEA;
+   border-style: none;
+   color: white;
+   border-radius: 10px;
+   margin-left: 1px;
+ }
+
+ .reply-div{
+   display: flex;
+   flex-direction: column;
+ }
+
+ #replyTo{
+   display: inline-block;
+   color: #AD1FEA;
+ }
+
+ .replies {
+   margin-top: 2.5rem;
+ }
+
+ #edit-back{
+   display: inline-block;
+   margin-top: 5px;
+   height: 10px;
+ }
+.reply:hover{
+   text-decoration: underline;
+   cursor: pointer;
+
+}
+.post-btn:hover{
+   background-color: #c75af6;
+}
+
+
+ /*Tablet view*/
+@media screen and (max-width: 950px) and (min-width: 540px) {
+   .details-top{
+      width: 89.71%;
+   }
+   .details{
+      width: 89.71%;
+   }
+
+   
+   
+}
+   /*Mobile view*/
+   @media screen and (max-width: 550px) and (min-width: 250px) {
+      .details-top{
+         width: 87.2%;
+      }
+      .details{
+         width: 87.2%;
+      }
+      .post-btn{
+         margin-left: 50%;
+      }
+      .details-comments{
+         padding: 20px;
+      }
+      .content-inner{
+         height: fit-content;
+      }
+      .boxy{
+         display: inline-block;
+      }
+   }

@@ -11,42 +11,42 @@
 <body>
         
     <div class="page-1">
-        <div class="header">
-            <img class="arrow-left" src="assets/shared/icon-arrow-left.svg">
-            <a onclick="history.back()"class="h4 white-text">Go Back</a>
-            <p class="sugg head-marg" id="sugg-no">Roadmap</p>
-            <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end">Add Feedback</button>
+        <div class="header" >
+            <div class="road-header">
+            <div class="side-road">
+                <svg class="arrow-left" id="road-arrow" width="7" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L2 5l4-4" stroke="#4661E6" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            <p onclick="history.back()"class="h4 white-text back-text">Go Back</p></div>
+            <div><p class="rd-text h3" id="sugg-no">Roadmap</p></div>
+           </div>
+            <button onclick="location.href='newFeedback.html'" class="add-btn add-road h4 flex-end"> + Add Feedback</button>
 
         </div>
+        <nav class="nav-mobile">
+            <div class="nav-l opace " id="plan-div"><span class="body-3 dark-text mz">Planned</span></div>
+            <div class="nav-l progD "id="prog-div"><span class="body-3 dark-text">In-Progress</span></div>
+            <div class="nav-l opace" id="live-div"><span class="body-3 dark-text">Live</span></div>
+
+        </nav>
         <div class="page-content" id="page-road">  
             <div class="top-road">
-                <div class="plan-box" id="top-part-road">
+                <div class="plan-box  top-part-road d-none" id="plan-top" >
                     <p class="h3 dark-text" id="plan-title-len"></p>
                     <p class="body-2 light-text">Ideas prioritized for research</p>
                 </div>
-                <div class="plan-box"id="top-part-road">
+                <div class="plan-box top-part-road d-block"id="prog-top">
                     <p class="h3 dark-text" id="prog-title-len"></p>
                     <p class="body-2 light-text">Currently being developed</p>
                 </div>
-                <div class="plan-box">
+                <div class="plan-box d-none " id="live-top">
                     <p class="h3 dark-text" id="live-title-len"></p>
                     <p class="body-2 light-text">Released features</p>
                 </div>
 
             </div>
             <div class="page-content-down">
-                <div class="plan-box" id="planned">
-               
-
-                </div>
-                <div class="plan-box" id="in-progress">
-               
-
-                </div>
-                <div class="plan-box" id="live-1">
-               
-
-                </div>
+                <div class="plan-box d-none" id="planned"></div>
+                <div class="plan-box d-block" id="in-progress"></div>
+                <div class="plan-box d-none" id="live-1"></div>
 
             </div>
     </div>

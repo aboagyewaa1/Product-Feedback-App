@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body{
      font-family:'Jost';
     background-color: #F7F8FD;
@@ -23,9 +30,15 @@ body{
     margin-bottom: 24px;  
 }
 #top-nav{
-    height: 137px;
+    /* height: 137px; */
    background-image: url("../assets/suggestions/desktop/background-header.png");
+   background-repeat: no-repeat;
+   padding-bottom: 24px;
+   background-size: cover;
 }
+/* .upvotes:active .dark-text{
+    color: white;
+} */
 #top-nav-text{
     margin-bottom: 0px;
     margin-top: 62px;
@@ -53,7 +66,7 @@ body{
     margin: 24px 19.61% 24px 24px;
 }
 #size-1{
-    height: 166px;
+    height: fit-content;
   
 }
 #size-2{
@@ -91,7 +104,7 @@ body{
 
 }
 .no-content{
-    margin: 111px 24.97% 110px 25.33%;
+    padding: 111px 24.97% 110px 25.33%;
 }
 .no-yet{
     margin-top: 53px;
@@ -100,7 +113,6 @@ body{
 
 #view-text{
     margin-left: auto;
-    color: #4661E6;
     text-decoration: underline;
     /* margin-top: 20px; */
 }
@@ -180,7 +192,7 @@ body{
     background-color: #AD1FEA;
     color: white;
     border-style: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 15px;
     height: 44px;
     /* padding: 20px; */
@@ -197,6 +209,7 @@ a{
     color: white;
 }
 .arrow-plus{
+    width: 20px;
 
 }
 .content-1{
@@ -225,13 +238,15 @@ a{
     margin: 28px 3.88%;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 100%; */
+    flex-grow: 1;
 }
 .upvotes{
     background-color:#F2F4FF;
     border-radius: 10px;
     height: 53px;
-    width: 5.26%;    
+    width: 40px; 
+    color: #3A4374;
 }
 .tag{
     background-color: #F7F8FD;
@@ -245,7 +260,7 @@ a{
     text-transform: uppercase;
 }
 .up-marg{
-    margin: 10px 37.5% 8px;
+    margin: 10px 15px 8px;
 }
 .h1{
     font-size: 24px;
@@ -297,8 +312,11 @@ a{
     color: #647196;
 }
 .up-text{
-    margin: 0 22.5%
+    /* margin: 0 22.5%; */
+    text-align: center;
+    /* color: #3A4374;    */
 }
+
 .marg-0{
     margin: 0;
 }
@@ -307,14 +325,30 @@ a{
 }
 .content-mid{
     margin: 0 0 0 5.26%  ;
-    width: fit-content
+    width: fit-content;
+    flex: 1;;
 }
 .comments{
     display: flex;
     flex-direction: row;
     height: fit-content;
     width: max-content;
+    margin-top: 10px;
    
+}
+.nav-btn:not(.active):hover{
+    background-color: #cfd7ff;
+}
+
+.upvotes:not(.active2):hover{
+    background-color:#cfd7ff ;
+}
+
+.up-marg {
+    stroke: #4661E6;
+}
+.upvotes.active2 > .up-marg{
+    stroke: white;
 }
 .comments-svg{
     width: 18px;
@@ -327,4 +361,274 @@ a{
     width: 8px;
     height: 14px;
     fill: white;
+}
+.sidebar-box,.sidebar{
+    display: none;
+}
+
+.dropbtn:hover{
+    opacity: 0.75;
+}
+.opacity-view{
+    opacity: 0.25;
+}
+.add-btn:hover{
+    background-color: #c75af6;
+    cursor: pointer;
+}
+.view-op{
+    color: #4661E6;
+}
+.view-op:hover{
+    color: #8397f8;
+
+}
+.marg-0:hover{
+    color: #4661E6;
+}
+
+/* customized dropdpwn */
+/* Dropdown Button */
+.dropbtn {
+    /* background-color: #3498DB; */
+    /* color: white; */
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  /* .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  } */
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;  
+  }
+  .sort-bod{
+    border-bottom: 1px solid rgb(151, 151, 151,0.15);
+  }
+ 
+
+  .dropdown button{
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color:transparent;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 80px;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+   
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {color: #c75af6;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .noShow{
+      display: none;
+    }
+    .show {display:block;}
+.show-1{
+    display: inline-block;
+    margin-left: 90px;
+}
+.active2{
+    background-color: #4661E6;
+    color: white;
+}
+.p-tag{
+    margin-top: 15px;
+}
+
+.arrow-down{
+    margin-top: 33px;  
+}
+
+
+/*Tablet view*/
+@media screen and (max-width: 950px) and (min-width: 540px) {
+    .main-page{
+        display: flex;
+        flex-direction: column;
+        margin: 56px 5.21% 116px 5.08%;
+    }
+    .nav{
+        flex-direction: row;
+        width: 100%;
+        margin-right: 0;
+    }
+    .page{
+        width: 100%;
+    }
+    #top-nav{
+        height: 178px;
+    }
+    .sidebar-box,.sidebar{
+        display: none;
+    }
+
+
+}
+
+
+/*Mobile view*/
+@media screen and (max-width: 550px) and (min-width: 250px) {
+    .content{
+        margin: 6%;
+    }
+    .main-page{
+        flex-direction: column;
+        margin: 0;
+    }
+    .sidebar-box,.sidebar{
+        display: block;
+    }
+    .nav{
+        display: none;
+    }
+    .nav-size{
+        border-radius: 0;
+    }
+    .sidebar {
+        height: 100%;
+        width: 0; 
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111a;
+        overflow-x: hidden;
+        transition: 0.5s;
+        /* padding-top: 60px; */
+      }
+      .sidebar.active1 {
+        width: 100%;
+      }
+      #top-nav-1 {
+        transition: margin-left .5s;
+        /* padding: 16px; */
+        height: 72px;
+        background-image: url("../assets/suggestions/desktop/background-header.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .inner-sidebar{
+        background-color: #F2F4FF;
+        width: 271px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+      }
+      .nav-size{
+        padding: 0.1px;
+      }
+       #size-1,#size-2{
+        border-radius: 10px;
+
+       }
+        #top-nav-1{
+        margin-bottom: 0;
+       }
+      .nav-2-inner{
+        width: 81.16%;
+        margin: 24px 8.07% 36px 10.76%;
+      }
+      #top-nav-text{
+        margin-top: 16px;
+      }
+   
+      .hamburger{
+        position: absolute;
+        right: 20px;
+        top: 45px;
+        display: none;
+        
+        
+      }
+      .hamburger.active1 {
+        display: block;
+      }
+      .page{
+        /* margin: 0 6.4%; */
+        width: 100%;
+      }
+      .sugg{
+        display: none;
+      }
+      .sugg-img{
+        display: none;
+      }
+      .header{
+        border-radius: 0;
+      }
+
+      .content-inner{
+        display: grid;
+        
+        
+      }
+      .inner-box-content{
+        display: grid;
+        grid-template-areas: 
+        'a a a a'
+        's s p p';
+        margin: 7.34%;
+      }
+      .upvotes{
+        display: grid;
+        grid-template-areas: 
+        'y y z z';
+        grid-area: s;
+        margin-left: 5.26%;
+        width: fit-content;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .comments{
+        /* display: grid;
+        grid-template-areas: 
+        'y y z z'; */
+        grid-area: p;
+      }
+      .up-marg{
+        grid-area: y;
+        margin: 20px 5px 0px 15px;
+        
+      }
+      .up-text{
+        grid-area: z;
+        margin: 16px 15px 0px 0px;
+      }
+      /* .inner-box-content .upvotes{
+        /* position: relative;
+       top: 100px; */
+       /* display: inline-block; */
+      
+      
+      .content-1{
+        display: block;
+      }
+     
 }

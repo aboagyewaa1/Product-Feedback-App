@@ -11,6 +11,7 @@
 <body>
 
     <div class="main-page">
+        
         <div class="nav">
             <div class="nav-size" id="top-nav">
                 <p class="h2" id="top-nav-text">Frontend Mentor</p>
@@ -18,7 +19,7 @@
             </div>
             <div class="nav-size nav-2" id="size-1">
                 <div class="nav-2-inner" id="click-btn">
-                <button class="nav-btn body-3" id="all-btn" onclick="toggleActive">All </button>
+                <button class="nav-btn body-3 active" id="all-btn" onclick="toggleActive">All </button>
                 <button class="nav-btn body-3" onclick="toggleActive">UI</button>
                 <button class="nav-btn body-3" onclick="toggleActive">UX</button>
                 <button class="nav-btn body-3" onclick="toggleActive">Enhancement</button>
@@ -29,36 +30,95 @@
             <div class="nav-2 nav-size" id="size-2">
                 <div class="nav-btm-inner marg marg-1">
                     <p class="h3 dark-text"id="road-text">Roadmap</p>
-                    <a href="roadmap.html" class="body-3" id="view-text">View</a>
+                    <a href="roadmap.html" class="body-3 view-op" id="view-text">View</a>
                 </div>
                 <div>
                   <div class="nav-btm-inner list marg"><p class="round" id="plan"></p><p id="spc">Planned</p><p class="flex-end blk-start" id="len-plan"></p></div>
-                  <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start">3</p></div>
-                  <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start">1</p></div>
+                  <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start" id="len-prog"></p></div>
+                  <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start" id="len-live"></p></div>
                </div>
             </div>
     </div>
     <div class="page">
-        <div class="header">
-            <img class="sugg-img head-marg" src="assets/suggestions/icon-suggestions.svg">
-            <p class="sugg head-marg" id="sugg-no"></p>
-            <p class="sort head-marg"><select>
-                <option>Most Upvotes</option>
-                <option>Least Upvotes</option>
-                <option>Most Comments</option>
-                <option>Least Comments</option>
-
-            </select><img class="arrow-down" src="assets/shared/icon-arrow-down.svg"></p>
-            <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end h4"><img class="arrow-plus" src="assets/shared/icon-plus.svg">Add Feedback</button>
-
+        <div class="sidebar-box">
+            <div class="nav-size" id="top-nav-1">
+                <p class="h2" id="top-nav-text">Frontend Mentor</p>
+                <p  class="body-2"id="nav-text-small">Feedback Board</p>
+                <img id='icon-open' class="hamburger active1" src="assets/shared/mobile/icon-hamburger.svg">
+                <img id='icon-close' class="hamburger" src="assets/shared/mobile/icon-close.svg">
+            </div>
         </div>
-        <div class="content" id="content1">  
-
+        <div style="position: relative">
+            <div class="sidebar" id="mobile-sidebar">
+                <div class="inner-sidebar">
+                    <div class="nav-size nav-2" id="size-1">
+                        <div class="nav-2-inner" id="click-btn">
+                        <button class="nav-btn body-3" id="all-btn" onclick="toggleActive">All </button>
+                        <button class="nav-btn body-3" onclick="toggleActive">UI</button>
+                        <button class="nav-btn body-3" onclick="toggleActive">UX</button>
+                        <button class="nav-btn body-3" onclick="toggleActive">Enhancement</button>
+                        <button class="nav-btn body-3" onclick="toggleActive">Bug</button>
+                        <button class="nav-btn body-3" onclick="toggleActive">Feature</button>
+                    </div>
+                    </div>
+                    <div class="nav-2 nav-size" id="size-2">
+                        <div class="nav-btm-inner marg marg-1">
+                            <p class="h3 dark-text"id="road-text">Roadmap</p>
+                            <a href="roadmap.html" class="body-3 view-op" id="view-text">View</a>
+                        </div>
+                        <div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="plan"></p><p id="spc">Planned</p><p class="flex-end blk-start" id="len-plan1"></p></div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="progress"></p><p id="spc">In-Progress</p><p class="flex-end blk-start" id="len-prog1"></p></div>
+                        <div class="nav-btm-inner list marg"><p class="round" id="live"></p><p id="spc">Live</p><p class="flex-end blk-start" id="len-live1"></p></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <img class="sugg-img head-marg" src="assets/suggestions/icon-suggestions.svg">
+                <p class="sugg head-marg h3" id="sugg-no"></p>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn" id="sort1"><span class="body-2 white-text">Sort by : </span><span class="h4 white-text" id="display-sel">Most Upvotes</span> </button>
+                    <div id="myDropdown" class="dropdown-content " >
+                      <a  class="sort-acc sort-bod light-text" id="most1" value="most-upvotes">Most Upvotes 
+                        <svg class='noShow show-1' xmlns="http://www.w3.org/2000/svg" id="m1s" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc sort-bod light-text" id="least1"  value="least-upvotes">Least Upvotes
+                        <svg class="noShow" id="l1s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc sort-bod light-text"  id="most2" value="most-comments">Most Comments
+                        <svg class="noShow" id="m2s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                      <a  class="sort-acc  light-text" id="least2" value="least-comments" >Least Comments
+                        <svg class="noShow" id="l2s" xmlns="http://www.w3.org/2000/svg" width="13" height="11"><path fill="none" stroke="#AD1FEA" stroke-width="2" d="M1 5.233L4.522 9 12 1"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                <svg class="noShow arrow-down show" id="arr-down" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="#ffffff" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+                <svg class="noShow arrow-down" width="10" height="7" id="arr-up" xmlns="http://www.w3.org/2000/svg"><path d="M1 6l4-4 4 4" stroke="#ffffff" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+            </p>
+                <button onclick="location.href='newFeedback.html'" class="add-btn add-btn-top flex-end h4"> + Add Feedback</button>
+    
+            </div>
+            <div class="content" id="content1">  
+    
+            </div>
         </div>
 
     </div>
 </div>
-<script src="index.js"></script>
+<script src="index.js">
+
+    document.getElementById('hamburger').addEventListener('click',()=>{
+//         document.getElementById("mobile-side-bar").style.width = "250px";
+//   document.getElementById("top-nav").style.marginLeft = "250px";
+console.log('hi')
+
+    })
+
+
+
+</script>
 <!-- <script src="roadmap.js"></script> -->
     
 </body>
